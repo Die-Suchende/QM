@@ -1,0 +1,11 @@
+{
+  "hash": "ebcf8a20a2ce7806bbc65c78a83d24e5",
+  "result": {
+    "markdown": "---\ntitle: FAQs\nauthor:\n  name: Dr Rosaria Lena\n  affiliation: rosaria.lena@glasgow.ac.uk\ndate: last-modified\ndate-format: long\naffiliation-title: email\ndescription: 'Some questions from last year''s Padlet, and this year''s questions.'\ntitle-block-banner: true\nexecute:\n  echo: true\n  freeze: auto\n---\n\n<div class=\"padlet-embed\" style=\"border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4\"><p style=\"padding:0;margin:0\"><iframe src=\"https://padlet.com/embed/4msecjxviwqvwk3a\" frameborder=\"0\" allow=\"camera;microphone;geolocation\" style=\"width:100%;height:608px;display:block;padding:0;margin:0\"></iframe></p><div style=\"display:flex;align-items:center;justify-content:end;margin:0;height:28px\"><a href=\"https://padlet.com?ref=embed\" style=\"display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none\" target=\"_blank\"><div style=\"display:flex;align-items:center;\"><img src=\"https://padlet.net/embeds/made_with_padlet_2022.png\" width=\"114\" height=\"28\" style=\"padding:0;margin:0;background:0 0;border:none;box-shadow:none\" alt=\"Made with Padlet\"></div></a></div></div>\n\n<div class=\"padlet-embed\" style=\"border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4\"><p style=\"padding:0;margin:0\"><iframe src=\"https://padlet.com/embed/71orfbt4zdti0ql9\" frameborder=\"0\" allow=\"camera;microphone;geolocation\" style=\"width:100%;height:608px;display:block;padding:0;margin:0\"></iframe></p><div style=\"display:flex;align-items:center;justify-content:end;margin:0;height:28px\"><a href=\"https://padlet.com?ref=embed\" style=\"display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none\" target=\"_blank\"><div style=\"display:flex;align-items:center;\"><img src=\"https://padlet.net/embeds/made_with_padlet_2022.png\" width=\"114\" height=\"28\" style=\"padding:0;margin:0;background:0 0;border:none;box-shadow:none\" alt=\"Made with Padlet\"></div></a></div></div>\n\n",
+    "supporting": [
+      "p3qm-faqs_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

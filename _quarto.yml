@@ -1,0 +1,101 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "P3 Quantum Mechanics"
+  author:
+    - name: Dr Rosaria Lena
+      email: rosaria.lena@glasgow.ac.uk
+      affiliation:
+        - name: School of Physics and Astronomy, University of Glasgow
+          # address: Kelvin Building room 620
+      # email: rosaria.lena@glasgow.ac.uk
+  
+  date: "2024/2025"
+  chapters:
+    - index.qmd
+    # - intro.qmd
+    - p3qm-1.qmd
+    - p3qm-2.qmd
+    - p3qm-3.qmd
+    - p3qm-4.qmd
+    - p3qm-5.qmd
+    - p3qm-6.qmd
+    - p3qm-ex.qmd
+    - p3qm-faqs.qmd
+    # - tricks.qmd
+    # - references.qmd
+
+  search: 
+    location: sidebar
+    type: overlay
+
+  downloads: [pdf, epub]
+  sidebar:
+    pinned: true
+    # tools:
+    #   - icon: save
+    #     menu:
+    #       - text: ""
+    #         url:  "#"
+    #       - text: ""
+    #         url:  "#"
+    #       - text: ""
+    #         url:  "#"
+
+  
+  
+bibliography: references.bib
+
+format:
+  html:
+    # theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
+    number-sections: true
+    # embed-resources: true
+    code-fold: true
+    code-tools:
+      source: false
+    code-line-numbers: true
+    # code-summary: Show the code
+    execute:
+      echo: true
+    #   warning: false
+
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    number-sections: true
+    code-summary: false
+    # default-image-extension: pdf
+    execute:
+      echo: false
+    colorlinks: true
+    cite-method: biblatex
+    date: 2024/2025
+
+  # revealjs: 
+  #   output-ext: "slides.html"
+  #   theme: [serif, custom.scss]
+  #   controls: true
+  #   controls-tutorial: true
+  #   logo: img/uofg_logo.jpg
+  #   title-slide-attributes: 
+  #     data-background-size: contain !important
+  #   transition: none
+  #   slide-number: c/t
+  #   strip-comments: true
+  #   preview-links: true
+  #   margin: 0.10
+  #   width: 1000
+  #   chalkboard: 
+  #     boardmarker-width: 3
+  #     grid: false
+  #     background:
+  #     - "rgba(255, 255, 255, 0.0)"
+
+
+

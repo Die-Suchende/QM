@@ -1,0 +1,33 @@
+project:
+  output-dir: _slides
+  render:
+    - index.qmd
+    - intro.qmd
+    - p3qm-1.qmd
+    - tricks.qmd
+
+title: "P3 Quantum Mechanics"
+author: "Rosaria Lena"
+date: "2024/2025"
+bibliography: references.bib
+
+format:
+  revealjs:
+    output-ext: "slides.html"
+    theme: [serif, custom.scss]
+    controls: true
+    controls-tutorial: true
+    logo: img/uofg_logo.jpg
+    title-slide-attributes: 
+      data-background-size: contain !important
+    transition: none
+    slide-number: c/t
+    strip-comments: true
+    preview-links: true
+    margin: 0.10
+    width: 1000
+    chalkboard: 
+      boardmarker-width: 3
+      grid: false
+      background:
+      - "rgba(255, 255, 255, 0.0)"

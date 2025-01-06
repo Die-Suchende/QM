@@ -1,0 +1,19 @@
+{
+  "hash": "d0a77cc37a04bb1bf6e0f5b520bbbfe7",
+  "result": {
+    "markdown": "---\ntitle: Summary of exercises\nauthor:\n  name: Dr Rosaria Lena\n  affiliation: rosaria.lena@glasgow.ac.uk\ndate: last-modified\ndate-format: long\naffiliation-title: email\ndescription: 'This is a summary of all the exercises in the book, per chapter.'\ntitle-block-banner: true\nexecute:\n  echo: true\n  freeze: auto\n---\n\nThis will be updated as we progress with the lectures.\n\n## Chapter 1\n\n## Chapter 2\n\n## Chapter 3\n\n## Chapter 4\n\n## Chapter 5\n\n",
+    "supporting": [
+      "p3qm-ex_files/figure-epub"
+    ],
+    "filters": [],
+    "engineDependencies": {
+      "jupyter": [
+        {
+          "jsWidgets": false,
+          "jupyterWidgets": false,
+          "htmlLibraries": []
+        }
+      ]
+    }
+  }
+}
