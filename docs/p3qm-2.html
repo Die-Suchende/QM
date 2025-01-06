@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr Rosaria Lena">
+<meta name="dcterms.date" content="2025-01-06">
+<meta name="description" content="Lectures 4-5 - use Feynman and Bransden-Joachain for reference">
+
+<title>P3 Quantum Mechanics - 2&nbsp; Wavefunctions and the uncertainty principle</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./p3qm-3.html" rel="next">
+<link href="./p3qm-1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./p3qm-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wavefunctions and the uncertainty principle</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wavefunctions and the uncertainty principle</span></h1>
+                  <div>
+        <div class="description">
+          <em>Lectures 4-5</em> - use <em>Feynman</em> and <em>Bransden-Joachain</em> for reference
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">email</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Dr Rosaria Lena </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              rosaria.lena@glasgow.ac.uk
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 6, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">P3 Quantum Mechanics</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./P3-Quantum-Mechanics.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./P3-Quantum-Mechanics.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Origins of QM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wavefunctions and the uncertainty principle</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Schrödinger equation and some QM formalism</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Solutions of Schrödinger Equations in 1D - Bound states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Solutions of Schrödinger Equations in 1D - Scattering states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Angular momentum theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary of exercises</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-faqs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">FAQs</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><strong>Learning objectives</strong></a></li>
+  <li><a href="#wave-particle-duality" id="toc-wave-particle-duality" class="nav-link" data-scroll-target="#wave-particle-duality"><span class="header-section-number">2.1</span> Wave-particle duality</a></li>
+  <li><a href="#the-double-slit-experiment" id="toc-the-double-slit-experiment" class="nav-link" data-scroll-target="#the-double-slit-experiment"><span class="header-section-number">2.2</span> The double-slit experiment</a>
+  <ul class="collapse">
+  <li><a href="#feynmans-lectures" id="toc-feynmans-lectures" class="nav-link" data-scroll-target="#feynmans-lectures"><span class="header-section-number">2.2.1</span> Feynman’s lectures</a></li>
+  <li><a href="#experiment-1-an-experiment-with-bullets" id="toc-experiment-1-an-experiment-with-bullets" class="nav-link" data-scroll-target="#experiment-1-an-experiment-with-bullets"><span class="header-section-number">2.2.2</span> Experiment 1: An experiment with bullets</a></li>
+  <li><a href="#experiment-2-an-experiment-with-waves" id="toc-experiment-2-an-experiment-with-waves" class="nav-link" data-scroll-target="#experiment-2-an-experiment-with-waves"><span class="header-section-number">2.2.3</span> Experiment 2: An experiment with waves</a></li>
+  <li><a href="#experiment-3-an-experiment-with-electrons" id="toc-experiment-3-an-experiment-with-electrons" class="nav-link" data-scroll-target="#experiment-3-an-experiment-with-electrons"><span class="header-section-number">2.2.4</span> Experiment 3: An experiment with electrons</a></li>
+  <li><a href="#so-is-the-electron-a-wave-a-particle-or-both" id="toc-so-is-the-electron-a-wave-a-particle-or-both" class="nav-link" data-scroll-target="#so-is-the-electron-a-wave-a-particle-or-both"><span class="header-section-number">2.2.5</span> So is the electron a wave, a particle or both?</a></li>
+  <li><a href="#experiment-4-an-experiment-with-electrons-but-we-monitor-the-electrons-through-the-slits" id="toc-experiment-4-an-experiment-with-electrons-but-we-monitor-the-electrons-through-the-slits" class="nav-link" data-scroll-target="#experiment-4-an-experiment-with-electrons-but-we-monitor-the-electrons-through-the-slits"><span class="header-section-number">2.2.6</span> Experiment 4: An experiment with electrons… but we monitor the electrons through the slits!</a></li>
+  </ul></li>
+  <li><a href="#wavefunctions-and-borns-probability-interpretation" id="toc-wavefunctions-and-borns-probability-interpretation" class="nav-link" data-scroll-target="#wavefunctions-and-borns-probability-interpretation"><span class="header-section-number">2.3</span> Wavefunctions and Born’s probability interpretation</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2.3.1</span> <span style="color:#336699;">Exercise</span></a></li>
+  </ul></li>
+  <li><a href="#the-wave-formalism-for-free-particles" id="toc-the-wave-formalism-for-free-particles" class="nav-link" data-scroll-target="#the-wave-formalism-for-free-particles"><span class="header-section-number">2.4</span> The wave formalism for free particles</a>
+  <ul class="collapse">
+  <li><a href="#free-particle-as-plane-wave" id="toc-free-particle-as-plane-wave" class="nav-link" data-scroll-target="#free-particle-as-plane-wave"><span class="header-section-number">2.4.1</span> Free particle as plane wave?</a></li>
+  <li><a href="#superposition-of-two-plane-waves" id="toc-superposition-of-two-plane-waves" class="nav-link" data-scroll-target="#superposition-of-two-plane-waves"><span class="header-section-number">2.4.2</span> Superposition of two plane waves</a></li>
+  <li><a href="#adding-more-waves-to-form-a-wavepacket" id="toc-adding-more-waves-to-form-a-wavepacket" class="nav-link" data-scroll-target="#adding-more-waves-to-form-a-wavepacket"><span class="header-section-number">2.4.3</span> Adding more waves to form a wavepacket</a></li>
+  <li><a href="#wavepacket-dispersion" id="toc-wavepacket-dispersion" class="nav-link" data-scroll-target="#wavepacket-dispersion"><span class="header-section-number">2.4.4</span> Wavepacket dispersion</a></li>
+  <li><a href="#conservation-of-probability" id="toc-conservation-of-probability" class="nav-link" data-scroll-target="#conservation-of-probability"><span class="header-section-number">2.4.5</span> Conservation of probability</a></li>
+  </ul></li>
+  <li><a href="#reciprocity-in-wavepackets-and-the-heisenberg-uncertainty-principle" id="toc-reciprocity-in-wavepackets-and-the-heisenberg-uncertainty-principle" class="nav-link" data-scroll-target="#reciprocity-in-wavepackets-and-the-heisenberg-uncertainty-principle"><span class="header-section-number">2.5</span> Reciprocity in wavepackets and the Heisenberg uncertainty principle</a>
+  <ul class="collapse">
+  <li><a href="#gaussian-wavepackets" id="toc-gaussian-wavepackets" class="nav-link" data-scroll-target="#gaussian-wavepackets"><span class="header-section-number">2.5.1</span> Gaussian wavepackets</a></li>
+  <li><a href="#heisenbergs-uncertainty-principle---implications" id="toc-heisenbergs-uncertainty-principle---implications" class="nav-link" data-scroll-target="#heisenbergs-uncertainty-principle---implications"><span class="header-section-number">2.5.2</span> Heisenberg’s uncertainty principle - implications</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.6</span> Summary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.7</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="learning-objectives" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="learning-objectives"><strong>Learning objectives</strong></h2>
+<ol type="1">
+<li>Understanding the concept of wave-particle duality and its experimental confirmations</li>
+<li>Applying the concepts of wavefunctions and probability amplitudes to describe free particles as matter-waves</li>
+<li>Understand the Heisenberg uncertainty principle’s origin and its implications</li>
+</ol>
+<p><em>The content of this lecture is mostly covered in Chapter 1 of Feynman’s lectures <span class="citation" data-cites="Feynman:1494701">(<a href="#ref-Feynman:1494701" role="doc-biblioref">Feynman, Leighton, and Sands 2010</a>)</span>.</em></p>
+<hr>
+</section>
+<section id="wave-particle-duality" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="wave-particle-duality"><span class="header-section-number">2.1</span> Wave-particle duality</h2>
+<p>In the previous chapter we saw how classical physics is not sufficient to describe a series of phenomena, and that we need to introduce concepts such as <em>quantisation</em> of energy and <em>wave-particle duality</em> that applies not only to light, but also to matter.</p>
+<p>In the following we will see that matter waves, in analogy to light, can be described by quantities called <strong>wavefunctions</strong>. The physical meaning of these is not immediate, as they differ from conventional water, sound or light waves, but we will discuss this further later in the chapter and it will become more clear after we go through different variations of the double-slit experiment.</p>
+</section>
+<section id="the-double-slit-experiment" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-double-slit-experiment"><span class="header-section-number">2.2</span> The double-slit experiment</h2>
+<p>A typical experiment that shows the wave-particle duality is the double-slit experiment, which you have already seen in other courses such as “Classical and Quantum Waves” and will be briefly discussed here.</p>
+<section id="feynmans-lectures" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="feynmans-lectures"><span class="header-section-number">2.2.1</span> Feynman’s lectures</h3>
+<p>If you want a thorough description of the wave-particle duality, the double-slit experiment and how this impacted the development of quantum physics, there are endless resources you can read, including the books in the suggested reading list. I have a personal preference in this regard, and it’s provided by Feynman. His “Lectures on Physics” are freely available online <a href="https://www.feynmanlectures.caltech.edu/III_01.html">here</a> (also embedded below), and I recommend reading the first three chapters of the third book (or at least the first one - the third gets more technical). They are very descriptive, so do not be scared by the length, but they are very useful for a fundamental understanding of the physics behind the mathematical description!</p>
+<p>Feynman did a pretty fine job at going through this extensively in three chapters, so forgive me if I don’t make an effort at reinventing the wheel by trying to reformulate what he perfectly explains, I’ll just summarise these concepts briefly and use them to introduce some notation that we will keep using for the rest of the course and that you need to familiarise yourself with.</p>
+<p>The two chapters from Lectures on Physics can be found at the following links, also embedded below. I will mainly focus on the first chapter for the various double-slit experiments, while the second chapter is more focused on understanding of the implications of the previous experiments and how these relate to the Heisenberg’s uncertainty principle.</p>
+<ul>
+<li><a href="https://www.feynmanlectures.caltech.edu/III_01.html">Chapter 1 - Quantum behaviour</a></li>
+<li><a href="https://www.feynmanlectures.caltech.edu/III_02.html">Chapter 2 - The Relation of Wave and Particle Viewpoints</a> <!-- - [Chapter 3 - Probability Amplitudes](https://www.feynmanlectures.caltech.edu/III_03.html) --></li>
+</ul>
+<iframe src="https://www.feynmanlectures.caltech.edu/III_01.html" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="450" width="700"></iframe>
+<!-- <iframe src="https://www.feynmanlectures.caltech.edu/III_02.html" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="450" width="700"></iframe> -->
+<!-- <iframe src="https://www.feynmanlectures.caltech.edu/III_03.html" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="450" width="700"></iframe> -->
+</section>
+<section id="experiment-1-an-experiment-with-bullets" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="experiment-1-an-experiment-with-bullets"><span class="header-section-number">2.2.2</span> Experiment 1: An experiment with bullets</h3>
+<p>Let’s start with our double-slit setup for the first experiment with bullets: a machine gun shooting bullets, a wall with two slits (each just big enough to let one bullet go through), and a backstop with a detector, where the bullets stop and accumulate.</p>
+<p>Let’s break down the experiment in three phases:</p>
+<p><strong>1. Only slit #1 open</strong></p>
+<p>Let’s suppose to divide the screen in squares with sides of length <span class="math inline">\(\Delta x\)</span>, and of shooting a total of <span class="math inline">\(N\)</span> bullets.</p>
+<p>What we observe is a distribution of bullets <span class="math inline">\(N_1(x)\)</span>, giving a probability <span class="math inline">\(P_1(x)=N_1(x)/N\)</span> of finding a bullet, coming from slit 1, at the position <span class="math inline">\(x\)</span> (see <span class="math inline">\(P_1\)</span> in <a href="#fig-feynman-bullets">Figure&nbsp;<span>2.1</span></a>). A bullet could hit the edge of the slit and be deflected in its trajectory, so we can’t know <em>exactly</em> where the bullet would go, but can know what the probability that it will be found at the coordinate <span class="math inline">\(x\)</span> of the backstop would be. This probability distribution will be a bell curve, centered around the coordinate aligned with the slit.</p>
+<p><strong>2. Only slit #2 open</strong></p>
+<p>If now we close slit 1 and open slit 2, we will have the same kind of result as for phase 1, but now with the bell curve <span class="math inline">\(P_2=N_2(x)/N\)</span> centered around the coordinate aligned with the second slit (see <span class="math inline">\(P_2\)</span> in <a href="#fig-feynman-bullets">Figure&nbsp;<span>2.1</span></a>).</p>
+<p><strong>3. Both slits open</strong></p>
+<p><em>What do we observe if both slits are open?</em> For the purpose of this experiment, let’s stick with the assumption that bullets are <em>indivisible</em> and macroscopic and arrive one per time at the backstop. They will either go through slit 1 or slit 2. The total probability that the bullet will hit a position <span class="math inline">\(x\)</span> in the screen is the sum of the individual probabilities <span class="math inline">\(P_1\)</span> and <span class="math inline">\(P_2\)</span> obtained when only one of the slits is open (see <span class="math inline">\(P_{12}\)</span> in <a href="#fig-feynman-bullets">Figure&nbsp;<span>2.1</span></a>): <span class="math display">\[
+P_{12}(x)=P_1(x)+P_2(x).
+\]</span></p>
+<div id="fig-feynman-bullets" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/feynman_bullets.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.1: Double slit experiment with bullets. Source: <span class="citation" data-cites="Feynman:1494701">Feynman, Leighton, and Sands (<a href="#ref-Feynman:1494701" role="doc-biblioref">2010</a>)</span></figcaption>
+</figure>
+</div>
+<p><strong>No interference is observed in this experiment!</strong></p>
+</section>
+<section id="experiment-2-an-experiment-with-waves" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="experiment-2-an-experiment-with-waves"><span class="header-section-number">2.2.3</span> Experiment 2: An experiment with waves</h3>
+<p>Let’s consider the same setup, but instead of a gun shooting bullets, let’s now consider a wave source, such as water waves, and a screen which measures the “intensity” of the wave motion. Concentric wavefronts propagate from a point source and hit the two slits, which we can then consider as point-like sources of secondary waves (using Huygen’s principle, which you should remember from the course on Waves). The setup is illustrated in (<a href="#fig-feynman-waves">Figure&nbsp;<span>2.2</span></a>).</p>
+<div id="fig-feynman-waves" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/feynman_waves.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.2: Double-slit experiment with waves. Source: <span class="citation" data-cites="Feynman:1494701">Feynman, Leighton, and Sands (<a href="#ref-Feynman:1494701" role="doc-biblioref">2010</a>)</span></figcaption>
+</figure>
+</div>
+<p>What we observe is that if we cover one of the two slits, we have the intensity bell curves indicated with <span class="math inline">\(I_1\)</span> or <span class="math inline">\(I_2\)</span> in <a href="#fig-feynman-waves">Figure&nbsp;<span>2.2</span></a>. However, if both slits are open, the waves interfere and form a pattern with maxima and minima of intensity, corresponding to positions where they interfere constructively and destructively, respectively.</p>
+<p>In contrast to the previous experiment with bullets, where the total probability as a function of space was the sum of the two probability distributions, here the intensity observed is not simply the sum of the two intensities obtained when one of the slits is closed: <span class="math inline">\(I_{12}\neq I_1 + I_2\)</span>.</p>
+<p>The key point here is that we cannot simply consider a sum of intensities, we need to consider the waves <em>amplitudes</em>: the intensity is in fact proportional the modulus square of the amplitude. This means that, if the amplitudes of the secondary waves coming from slits 1 and 2 are respectively <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span>, the corresponding intensities with only one slit open are <span class="math inline">\(I_1 = |h_1|^2\)</span> and <span class="math inline">\(I_2=|h_2|^2\)</span> (see <a href="#fig-feynman-waves">Figure&nbsp;<span>2.2</span></a>). However, when both slits are open, the total intensity will be given by the square of the <em>sum of the amplitudes</em>: <span class="math display">\[
+I_{12} = |h_1+h_2|^2.
+\]</span></p>
+<p><strong>Interference is observed with waves!</strong></p>
+</section>
+<section id="experiment-3-an-experiment-with-electrons" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="experiment-3-an-experiment-with-electrons"><span class="header-section-number">2.2.4</span> Experiment 3: An experiment with electrons</h3>
+<p><em>What do we expect to observe in an experiment with electron guns that send one electron per time through two slits?</em></p>
+<p>The set-up is similar to the one in the first experiment, except that now the gun is shooting electrons instead of bullets, and at the screen we have a detector of electron that “clicks” every time an electron hits it.</p>
+<p>Since we are shooting electrons, one per time, we would expect something like the probability distribution in the first experiment with bullets…</p>
+<p>…however, this is not what we observe (not always at least - we’ll get back to this soon).</p>
+<p>What we observe is illustrated in <a href="#fig-feynman-electrons">Figure&nbsp;<span>2.3</span></a>.</p>
+<div id="fig-feynman-electrons" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/feynman_electrons.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.3: Double-slit experiment with electrons. Source: <span class="citation" data-cites="Feynman:1494701">Feynman, Leighton, and Sands (<a href="#ref-Feynman:1494701" role="doc-biblioref">2010</a>)</span></figcaption>
+</figure>
+</div>
+<p><strong>Do electrons split across the two slits?</strong></p>
+<p>Every “click” registered has always the same loudness - each electron detected is always a whole <em>localised</em> entity with its own mass and charge. No half electrons are detected, ever! This means that <em>electrons do not split across the two slits</em>.</p>
+<p><strong>So does this mean that each electron goes either through slit 1 or slit 2?</strong></p>
+<p>No, because if that was the case, the probability <span class="math inline">\(P_{12}\)</span> would just be the same of <span class="math inline">\(P_1\)</span> and <span class="math inline">\(P_2\)</span>, as with experiment 1. Instead, <span class="math inline">\(P_{12}\neq P_1+P_2\)</span>: there is interference!</p>
+<p>So in the same experiment electrons behave like <em>waves while in transit, before they get detected</em>, but behave like <em>particles upon detection</em>.</p>
+<p>After all, the same experiment can be done with light, and in that case we observe the same interference patter. In that case we can think of the interference of electromagnetic waves, in the light-as-wave description, but in the detection process light behaves as a particle, since it is detected by the photoelectric effect, which needs a (quantised) photons description to be explained (see previous chapter). Even sending one photon per time, the interference pattern is observed, so it is not a result of more photons interfering.</p>
+<p><strong>Ok, but maybe since electrons are charged they just interfere with each other and form that interference pattern?</strong></p>
+<p>No, actually the same pattern is observed also if you use neutrons, so it does not depend on the charge, it really depends on the <em>nature</em> of matter and how it manifests in different scenarios.</p>
+<p>We can see where this is going: wave-matter duality. The interference pattern that we obtain in this experiment is analogous to the one we saw for intensity in experiment 2. In that case, we saw that the apparently complicated pattern of the intensity is actually very simple if we consider the sum of the wave amplitudes, which are physical and related to the oscillating electric and magnetic fields. But then, how do we explain this with electrons? We need to introduce a concept analogous to the classical wave amplitudes and to the classical waves, but for probabilities. So we come up with an analogous concept to describe the wave behaviour of matter: the <em>wavefunction</em>, introduced at the beginning of the chapter, playing the role of <em>probability amplitude</em>.</p>
+<p>In this experiment we use the symbol <span class="math inline">\(\phi\)</span> for the wavefunction, so the probability is <span class="math inline">\(P = \phi^*\phi = |\phi|^2\)</span>.</p>
+<!-- ::: {.callout-important}
+
+Wavefunctions, used to describe matter waves, are quite different from waves like water, sound or electromagnetic waves: they are _not_ measurable quantities, they are represented by __complex numbers__, so they _do not directly define probabilities_, but are used to find them. To have physically "meaningful" measurable quantities, we need to obtain _real_ values, so we use the modulus square of wavefunctions (or probability amplitudes) to obtain the probabilities.
+
+::: -->
+<p>If an event - like the detection of a particle on the screen - can happen following different possible paths, we associate a wavefunction (or probability amplitude - a complex number) to each path. In this case, for two slits, we have two probability amplitudes <span class="math inline">\(\phi_1\)</span> and <span class="math inline">\(\phi_2\)</span> associated to each possible trajectory. The probabilities of detecting a particle at the screen, coming from slit 1 and slit 2 respectively (when one of the slits is closed), are therefore <span class="math inline">\(P_1=|\phi_1|^2\)</span> and <span class="math inline">\(P_2=|\phi_2|^2\)</span>.</p>
+<p>When both slits are open, the total probability of observing a particle at the screen is <em>not</em> the sum of these two probabilities. In analogy with the intensity for waves calculated from the square of amplitudes, the total probability is obtained from the modulus square of the <em>total probability amplitude</em> <span class="math inline">\(\phi_1+\phi_2\)</span>: <span id="eq-P12_slits_interference"><span class="math display">\[
+P_{12}=|\phi_1+\phi_2|^2=|\phi_1|^2+|\phi_2|^2+2|\phi_1||\phi_2|\cos\theta.
+\tag{2.1}\]</span></span></p>
+<p>In this case we say that the electron is in a <strong>superposition state</strong> <span class="math inline">\(\phi=\phi_1+\phi_2\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the last term in <a href="#eq-P12_slits_interference">Equation&nbsp;<span>2.1</span></a>, <span class="math inline">\(2|\phi_1||\phi_2|\cos\theta\)</span>, is an interference term that makes the difference between this experiment and the classical case with no interference. <span class="math inline">\(\theta\)</span> is the phase between the two complex wavefunctions <span class="math inline">\(\phi_1\)</span> and <span class="math inline">\(\phi_2\)</span>.</p>
+</div>
+</div>
+<p>The mathematics is exactly the same as the one that we have for classical waves once we introduce the concept of probability amplitude!</p>
+<p><strong>Interference is observed in this experiment with electrons (or neutrons)!</strong></p>
+</section>
+<section id="so-is-the-electron-a-wave-a-particle-or-both" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="so-is-the-electron-a-wave-a-particle-or-both"><span class="header-section-number">2.2.5</span> So is the electron a wave, a particle or both?</h3>
+<p>There are different interpretations about the wave-particle duality of matter, and maybe the most accepted answer to the above question is… <em>neither</em> (not at the same time at least!).</p>
+<blockquote class="blockquote">
+<p>Electrons behave like waves on Mondays, Wednesday and Fridays, like particles on Tuesdays, Thursdays and Saturdays, and like nothing at all on Sundays.</p>
+</blockquote>
+<p>– Readapted version of Sir Lawrence Bragg’s quote (originally for light).</p>
+<p>Electrons (and other matter) can behave like either particles ot waves, depending on the kind of experiment performed on them, but <em>never</em> behave like both waves and particles <em>simultanously</em>.</p>
+<p>This statement reflects Bohr’s concept of <strong>complementarity</strong>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Complementarity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>According to the <em>complementarity principle</em>, pairs of <em>complementary quantities</em>, like wave and particle properties, can’t be measured simultaneously. The principle of complementarity is not limited to the wave-particle duality, but can be applied to other complementary quantities such as position and momentum, therefore extending to the uncertainty principle.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The ultimate origin of the difficulty lies in the fact (or philosophical principle) that we are compelled to use the words of common language when we wish to describe a phenomenon, not by logical or mathematical analysis, but by a picture appealing to the imagination. Common language has grown by everyday experience and can never surpass these limits. Classical physics has restricted itself to the use of concepts of this kind; by analyzing visible motions it has developed two ways of representing them by elementary processes: moving particles and waves. There is no other way of giving a pictorial description of motions — we have to apply it even in the region of atomic processes, where classical physics breaks down. Every process can be interpreted either in terms of corpuscles or in terms of waves, but on the other hand it is beyond our power to produce proof that it is actually corpuscles or waves with which we are dealing, for we cannot simultaneously determine all the other properties which are distinctive of a corpuscle or of a wave, as the case may be. We can therefore say that <em>the wave and corpuscular descriptions are only to be regarded as complementary ways of viewing one and the same objective process</em>, a process which only in definite limiting cases admits of complete pictorial interpretation.</p>
+</blockquote>
+<p>– M. Born, Atomic Physics, fourth edition, New York, Hafner Publishing Co., 1946, p.&nbsp;92.</p>
+</section>
+<section id="experiment-4-an-experiment-with-electrons-but-we-monitor-the-electrons-through-the-slits" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="experiment-4-an-experiment-with-electrons-but-we-monitor-the-electrons-through-the-slits"><span class="header-section-number">2.2.6</span> Experiment 4: An experiment with electrons… but we monitor the electrons through the slits!</h3>
+<p>Strange things happen when we add a strong light source between the two slits (as in <a href="#fig-feynman-electrons-observed">Figure&nbsp;<span>2.4</span></a>), so when the electron passes through a slit, it scatters some light and we can know which one it went through by seeing which aperture the “flash” comes from.</p>
+<div id="fig-feynman-electrons-observed" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/feynman_electrons_observed.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.4: Double-slit experiment with electrons and a light source between the slits to observe the electrons’ path. Source: <span class="citation" data-cites="Feynman:1494701">Feynman, Leighton, and Sands (<a href="#ref-Feynman:1494701" role="doc-biblioref">2010</a>)</span></figcaption>
+</figure>
+</div>
+<p><strong>What do we observe once we start shooting electrons?</strong> Every time we hear a “click” (we detect an electron at the screen), we also see a flash, either coming from slit 1 or slit 2. However, we <em>never</em> observe two flashes coming from both slits!</p>
+<p>So were we wrong when in the previous experiment we said that electrons do not go through either slit 1 or slit 2? Not really, because if we keep shooting electrons, we see something unexpected: the interference now disappears! We obtain the same result as in experiment 1 with bullets. However, if the light close to the slits is turned off, the interference patter of experiment 3 is restored… What is going on here?</p>
+<p>Something happens when we look at the electrons, their distribution changes, so their motion seems to be affected by the interaction with the light source used to “see” the electrons going through the slits. Indeed, the bright light source disturbs the electrons, “localising” them.</p>
+<p><strong>What if we try to use a less bright source, so that the electrons are less disturbed?</strong></p>
+<p>We can in fact make light dimmer, however the flashes of light observed will not get weaker, what changes is their frequency. With dim enough light, not all “clicks” will be preceded by a flash. In fact, reducing the <em>intensity</em> of the light source will not change the size of the photons, only their quantity, hence the rate at which they are emitted (remember the simulation on the photoelectric effect in the previous chapter). This explains why some electrons can go through a slit without scattering light at times, because at times there is no photon around while the electron travels! Let’s keep running this experiment with dim light anyway and let’s build two different histograms of the detections to reconstruct the probability distribution for the two different cases: when we see the flash and when we do not see the flash. If we keep the count of the detections where a flash is observed, we obtain the total distribution <span class="math inline">\(P'_{12}\)</span>, without interference, of <a href="#fig-feynman-electrons-observed">Figure&nbsp;<span>2.4</span></a>. However, for the counts of detections for which a flash was not observed, we obtain again the interference pattern <span class="math inline">\(P_{12}\)</span> of <a href="#fig-feynman-electrons">Figure&nbsp;<span>2.3</span></a>! We can confirm that <strong>if electrons are not seen, we have interference!</strong></p>
+<p><strong>What if we use a light with a lower frequency?</strong></p>
+<p>The kick given to the electrons by light depends on the momentum of the photons, <span class="math inline">\(p=h/\lambda\)</span>, so if we want to decrease this, we should increase the wavelength using light at lower frequencies (e.g.&nbsp;infrared or radio), not lower intensities! If we try the experiment with increasingly lower frequencies, nothing seems to change, until we eventually try with light of wavelength comparable to the distance between the slits. Maybe you can guess what happens here though… if the wavelength is comparable to or longer than the distance between the slits, then we can’t distinguish these as two separate spots! So what we see in this case is just a big fuzzy flash, but we would not be able to tell whether it comes from slit 1 or slit 2, so we can’t tell which slit the electron went through. For such wavelengths then we start seeing again the interference pattern of <a href="#fig-feynman-electrons">Figure&nbsp;<span>2.3</span></a>.</p>
+<p>This phenomenon is actually a consequence of the <em>uncertainty principle</em>, which will see in the rest of the chapter, and for which we can give this alternative statement: <em>it is impossible to design an experiment to determine through which slit the electron passes without destroying the interference pattern by disturbing the electron.</em></p>
+</section>
+</section>
+<section id="wavefunctions-and-borns-probability-interpretation" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="wavefunctions-and-borns-probability-interpretation"><span class="header-section-number">2.3</span> Wavefunctions and Born’s probability interpretation</h2>
+<p>We introduce the concept of <strong>wavefunctions</strong> to describe the wave property of matter in analogy to light.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wavefunction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A wavefunction <span class="math inline">\(\Psi(\vec{r},t)\)</span> is a complex number associated to a particle (in the matter wave description of QM) and it is used to calculate the probability of finding the particle in a small region of space at a given time <span class="math inline">\(t\)</span>, according to <em>Born’s interpretation</em>.</p>
+</div>
+</div>
+<p>Wavefunctions, used to describe matter waves, are quite different from waves like water, sound or electromagnetic waves: they are <em>not</em> measurable quantities, they are represented by <strong>complex numbers</strong>, so they <em>do not directly define probabilities</em>, but <em>probability amplitudes</em> that are used to find probabilities. To have physically “meaningful” measurable quantities, we need to obtain <em>real</em> values, so we use the modulus square of wavefunctions (or probability amplitudes) to obtain the probabilities.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Probabilities from wavefunctions - Born interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a one-dimensional wavefunction <span class="math inline">\(\Psi(x,t)\)</span>, the <strong>probability density of finding a particle</strong> in an infinitesimal region between <span class="math inline">\(x\)</span> and <span class="math inline">\(x+dx\)</span> is <span id="eq-prob-density-wavefunction-1D"><span class="math display">\[
+P(x,t)dx=|\Psi(x,t)|^2 dx = \Psi(x,t)^*\Psi(x,t) dx.
+\tag{2.2}\]</span></span></p>
+<ul>
+<li><p>The probability of finding the particle in a finite region <span class="math inline">\(a\leq x \leq b\)</span> is <span id="eq-wavef-prob-interval"><span class="math display">\[
+P(x,t) = \int_a^b |\Psi(x,t)|^2 dx.
+\tag{2.3}\]</span></span></p></li>
+<li><p>Since the particle must be somewhere along the <span class="math inline">\(x-\)</span>axis where the wavefunction is defined, the total probability of finding the particle in that region must be equal to <span class="math inline">\(1\)</span>: <span id="eq-normalization-wavefunc"><span class="math display">\[
+\int_{-\infty}^{\infty}|\Psi(x,t)|^2 dx = 1.
+\tag{2.4}\]</span></span></p></li>
+</ul>
+<p>This is the <strong>normalization condition</strong> that we always need to make sure is satisfied by a wavefunction:</p>
+</div>
+</div>
+<p>If you consider the wavefunction at a fixed time <span class="math inline">\(T\)</span>, the probability of finding the particle in a certain interval along <span class="math inline">\(x\)</span> is given by the area under the curve described by <span class="math inline">\(|\Psi(x,T)|^2\)</span>.</p>
+<div id="fig-wavef-probability" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/wavef_probability.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.5: Probability of finding a particle in the interval <span class="math inline">\(a\leq x \leq b\)</span>, given the wavefunction <span class="math inline">\(\Psi(x,T)\)</span> at a given time <span class="math inline">\(T\)</span>. The probability, given by <a href="#eq-wavef-prob-interval">Equation&nbsp;<span>2.3</span></a>, is the highlighted orange area under the curve.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because of the relation between the wavefunction and the probability, it is important to stress that a wavefunction <span class="math inline">\(\Psi(x,t)\)</span>, function of <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>, must be:</p>
+<ul>
+<li><strong>single-valued</strong> (i.e.&nbsp;for each value of <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> there is only one corresponding value of <span class="math inline">\(\Psi\)</span>)</li>
+<li><strong>continuous</strong> (i.e.&nbsp;you could “draw” it without lifting your pen from the paper)</li>
+<li><strong>smooth</strong> (i.e.&nbsp;no sudden changes in the derivative - continuous derivative)</li>
+<li><strong>normalized</strong> (see <a href="#eq-normalization-wavefunc">Equation&nbsp;<span>2.4</span></a>)</li>
+</ul>
+</div>
+</div>
+<p>We will see later more in detail why these conditions are required, but they will be important for the rest of the course, so remember them!</p>
+<section id="exercise" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2.3.1</span> <span style="color:#336699;">Exercise</span></h3>
+<p>The initial wavefunction of a particle is <span class="math inline">\(\Psi(x,0)=A e^{-x^2/4}\)</span>.</p>
+<ol type="1">
+<li>Find the value of the coefficient <span class="math inline">\(A\)</span>.</li>
+<li>Sketch the probability of finding the particle against <span class="math inline">\(x\)</span>.</li>
+<li>What is the probability of finding the particle in the interval <span class="math inline">\([-x_0,x_0]\)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>What properties must the wavefunction satisfy?</li>
+<li>It may be convenient to use the symmetry of the wavefunction.</li>
+</ul>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<ol type="1">
+<li><p>You need to impose the normalization condition for the probability (i.e.&nbsp;the integral of the probability over the whole space must be 1): <span class="math display">\[
+\int_{-\infty}^{\infty} |\Psi(x,0)|^2 dx = |A|^2 \int_{-\infty}^{\infty} e^{x^2/2} dx = |A|^2 \sqrt{2\pi}=1,
+\]</span> which gives <span class="math inline">\(A=(2\pi)^{-1/4}\)</span>.</p></li>
+<li><p>The probability against <span class="math inline">\(x\)</span> is given by the plot below:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/plot-exercise-2-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Probability of finding the particle described by the wavefunction <span class="math inline">\(\Psi(x,0)\)</span>, as a function of <span class="math inline">\(x\)</span>.</figcaption>
+</figure>
+</div>
+<!-- 3. [Add solution to third part] -->
+</details>
+</section>
+</section>
+<section id="the-wave-formalism-for-free-particles" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-wave-formalism-for-free-particles"><span class="header-section-number">2.4</span> The wave formalism for free particles</h2>
+<p>This part is based on the second chapter of Feynman’s lectures.</p>
+<p>We saw that the de Broglie wavelength (<a href="p3qm-1.html#eq-de-broglie-wavel">Equation&nbsp;<span>1.26</span></a>) implies that a particle with a momentum <span class="math inline">\(p\)</span>, like an electron, has to have an associated wavelength <span class="math inline">\(\lambda\)</span>: <span class="math inline">\(p=h/\lambda\)</span>.</p>
+<p>So how do we represent this matter wave having this wavelength?</p>
+<section id="free-particle-as-plane-wave" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="free-particle-as-plane-wave"><span class="header-section-number">2.4.1</span> Free particle as plane wave?</h3>
+<p>The most simple thing to describe a wave with a given wavelength is to consider a traveling plane wave.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Plane wave representation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In one dimension and in the complex plane, a plane wave has the form <span id="eq-plane-wave-complex"><span class="math display">\[
+\Psi(x,t)=A e^{i(kx-\omega(k) t)}=A[\cos(kx-\omega(k)t)+i\sin(kx-\omega(k)t)],
+\tag{2.5}\]</span></span> where <span class="math inline">\(A\)</span> is the amplitude, <span class="math inline">\(k=2\pi/\lambda\)</span> is the wavenumber and <span class="math inline">\(\omega=\nu/(2\pi)\)</span> is the angular frequency.</p>
+</div>
+</div>
+<p>From the Planck equation <a href="p3qm-1.html#eq-plancks-energy">Equation&nbsp;<span>1.14</span></a> we can write the energy in the form <span class="math display">\[
+E = h\nu = \hbar\omega.
+\]</span></p>
+<p>Note that in the next section, for simplicity of visualization, we will be using the real part of the plane wave <span id="eq-plane-wave"><span class="math display">\[
+\Psi(x,t)=A\cos(kx-\omega t),
+\tag{2.6}\]</span></span> but we will get back to using <a href="#eq-plane-wave-complex">Equation&nbsp;<span>2.5</span></a> later on. Considering <em>complex</em> wavefunctions in quantum mechanics is fundamental due to the probabilistic nature of quantum physics. While in classical mechanics the complex part of waves is “physical”, in quantum mechanics wavefunctions are intrinsically complex because they are used to define the probability and introduce phase factors that are not directly measurable, but have measurable consequences such as the interference in the double-slit experiment.</p>
+<section id="dispersion-relations" class="level4" data-number="2.4.1.1">
+<h4 data-number="2.4.1.1" class="anchored" data-anchor-id="dispersion-relations"><span class="header-section-number">2.4.1.1</span> Dispersion relations</h4>
+<p>From <a href="#eq-plane-wave-complex">Equation&nbsp;<span>2.5</span></a> we see that the frequency <span class="math inline">\(\omega\)</span> depends on the wavenumber <span class="math inline">\(k\)</span>. The functions relating the time-dependence and space-dependence of physical entities, with either <span class="math inline">\(\omega(k)\)</span> or <span class="math inline">\(E(p)\)</span>, is given by the <em>dispersion relations</em>.</p>
+<p><strong>Dispersion relation for non-dispersive systems</strong> For non-dispersive systems, the dispersion relation is <em>linear</em> <span id="eq-dispersion-rel-non-disp"><span class="math display">\[
+\omega(k)=vk,
+\tag{2.7}\]</span></span> where <span class="math inline">\(v\)</span> is the wave speed.</p>
+<p><strong>Dispersion relation for light</strong></p>
+<p>The dispersion relation for light (in vacuum) is also a <em>linear</em> function: <span id="eq-disp-rel-light"><span class="math display">\[
+c=\lambda \nu = \omega/k = E/p \implies \omega(k)=ck.
+\tag{2.8}\]</span></span></p>
+<p><strong>Dispersion relation for a non-relativistic particle</strong></p>
+<p>For a non-relativistic particle, using <a href="p3qm-1.html#eq-de-broglie-wavel">Equation&nbsp;<span>1.26</span></a>, we can derive the relation between the momentum and the wavenumber: <span class="math display">\[
+p=\hbar k,
+\]</span> and combining this with the definition of kinetic energy and the Planck equation <span class="math display">\[
+E = \frac{p^2}{2m}=\frac{\hbar^2k^2}{2m} = \hbar\omega,
+\]</span> we get the (<em>quadratic</em>) dispersion relation for a Newtonian (non-relativistic) particle <span id="eq-dispersion-relation"><span class="math display">\[
+\omega(k) = \frac{\hbar k^2}{2m}.
+\tag{2.9}\]</span></span></p>
+<p><strong>Dispersion relation for a relativistic particle</strong></p>
+<p>For a relativistic particle, the energy is <span class="math display">\[
+E=\sqrt{p^2c^2+m^2c^4}-mc^2.
+\]</span> For <span class="math inline">\(p\ll mc\)</span>, this reduces to</p>
+<p>####&nbsp;Plane waves derivatives</p>
+<p>The space and time derivatives of plane waves are <span class="math display">\[
+-i\hbar\frac{\partial \Psi}{\partial x} = \hbar k \Psi = p \Psi,
+\]</span> <span class="math display">\[
+i\hbar \frac{\partial \Psi}{\partial t} = \hbar \omega(k) \Psi = E \Psi.
+\]</span></p>
+</section>
+<section id="issues-with-free-particles-as-plane-waves" class="level4" data-number="2.4.1.2">
+<h4 data-number="2.4.1.2" class="anchored" data-anchor-id="issues-with-free-particles-as-plane-waves"><span class="header-section-number">2.4.1.2</span> Issues with free particles as plane waves</h4>
+<p>If the plane wave describes the wavefunction for a free particle, it means that since this must be continuous and extending to infinity with the same amplitude, we could find the particle <em>everywhere</em> in space with the same probability (<span class="math inline">\(|\Psi(x,t)|^2=A^2\)</span>), which does not seem right. In fact, if we consider the uncertainty on the position of the particle, <span class="math inline">\(\Delta x\)</span>, as being (roughly) the region across which the wavepacket extends, we can see (<a href="#fig-wavepackets-ab">Figure&nbsp;<span>2.6</span></a> (a)) that this is a <em>big</em> uncertainty - so big that it goes to infinity! The plane wave has the same intensity everywhere and it is <em>fully delocalised</em>.</p>
+<p>There is another issue… Let’s try to impose the normalisation condition considering a fixed time, e.g.&nbsp;<span class="math inline">\(t=0\)</span> for simplicity: <span class="math display">\[
+\int_{-\infty}^{\infty}|\Psi(x,t)|^2 dx = |A|^2 \int_{-\infty}^{\infty} \cos^2 (kx) dx \to |A|^2 \times \infty.
+\]</span></p>
+<p>In theory this should be equal to <span class="math inline">\(1\)</span> in order to be normalised, but we see that there is a problem: this integral does not converge, so this wavefunction <em>can’t be normalised</em>. This means that we can’t describe the free particle simply as a plane wave because it would be <em>unphysical</em>.</p>
+<p>It seems that having one single wavelength (or wavenumber, or momentum value), does not really do the job. What we would need is something to make this wave more “localised” in space. Remember however that the wavefunction still needs to extend across the whole space, from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>, but naturally go to <span class="math inline">\(0\)</span> beyond a certain range where we expect to find the particle (remember that the wavefunction has to be also smooth, continuous and single-valued). How do we obtain something that has zero amplitude somewhere and is contained in a wavepacket of length <span class="math inline">\(\Delta x\)</span>, like the one shown in <a href="#fig-wavepackets-ab">Figure&nbsp;<span>2.6</span></a> (b)?</p>
+<div id="fig-wavepackets-ab" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/wavepackets.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.6: (a) Wavefunction of the free particle as a plane wave - the uncertainty in position extends to infinity; (b) Wavepacket “localised” in a length <span class="math inline">\(\Delta x\)</span>.</figcaption>
+</figure>
+</div>
+<p>As Feynman says: let’s add more waves!</p>
+</section>
+</section>
+<section id="superposition-of-two-plane-waves" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="superposition-of-two-plane-waves"><span class="header-section-number">2.4.2</span> Superposition of two plane waves</h3>
+<p>Let’s try to add more waves having different wavelengths (corresponding to more values of momentum based on the de Broglie wavelength).</p>
+<p>Let’s start by adding two waves of different wavelengths. What do we obtain? Look at the example below that considers this, showing two waves and the resulting one obtained using the superposition principle.</p>
+<p>Go to <a href="https://www.physicsclassroom.com/PhysicsClassroom/media/interactive/WaveAddition/WaveAdd.html">this link</a> if the resource embedded below does not work.</p>
+<iframe src="sims/WaveAdd.html" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="450" width="500" title="Superposition of two waves to create a wavepacket."></iframe>
+<p>The resultant wave is now made of “beats”, resulting in “wave groups” with smaller extension due to constructive and destructive interference. We’re still not in the ideal case of having one <em>localised wavepacket</em>, but it seems that adding more waves (and more momenta) helps and reduces the uncertainty of the position. It is worth noting that by adding two waves of different wavelengths, because of the de Broglie wavelength, we have two possible values of momentum that we could observe, which means that we <em>increased the uncertainty of momentum</em>, and this leads to a <em>reduced uncertainty of the position</em>. This is not a case, and we will make more clarity on this by the end of the chapter.</p>
+<p>We also see that adding two waves with the same amplitude and different wavenumbers, we obtain a series of wave “envelopes” travelling at a group velocity that is different from the velocity of the individual waves. This will be clarified in the following.</p>
+<p>Let’s see how mathematically we get these “envelopes” by considering the sum of (the real part of) two plane waves with equal amplitude <span class="math inline">\(A\)</span>, different wavenumbers <span class="math inline">\(k_1\)</span> and <span class="math inline">\(k_2=k_1+\Delta x\)</span> and different frequencies <span class="math inline">\(\omega_1\)</span> and <span class="math inline">\(\omega_2=\omega_1+\Delta\omega\)</span>: <span id="eq-2waves-superp_1"><span class="math display">\[
+\Psi(x,t) = \Psi_1(x,t) + \Psi_2(x,t) = A [\cos(k_1 x - \omega_1 t) + \cos(k_2 x - \omega_2 t)].
+\tag{2.10}\]</span></span> Using the trigonometric identity <span class="math inline">\(\cos a+\cos b=2\cos\left( {\frac{1}{2}(a-b)}\right) \cos\left({\frac{1}{2}(a+b)}\right)\)</span>, from <a href="#eq-2waves-superp_1">Equation&nbsp;<span>2.10</span></a> we obtain <span id="eq-2waves-superp_2"><span class="math display">\[
+\Psi(x,t)=2\cos\left[\frac{1}{2}(\Delta k x-\Delta \omega t)\right]\cos\left[\frac{1}{2}(2k+\Delta k)x-\frac{1}{2}(2\omega+\Delta\omega)t\right],
+\tag{2.11}\]</span></span> and since <span class="math inline">\(\Delta k \ll k\)</span> and <span class="math inline">\(\Delta\omega \ll \omega\)</span>, the last cosine term in <a href="#eq-2waves-superp_2">Equation&nbsp;<span>2.11</span></a>, describing the wave <em>within the envelope</em> is <span class="math inline">\(\cos\left[\frac{1}{2}(2k+\Delta k)x-\frac{1}{2}(2\omega+\Delta\omega)t\right]\approx \cos[kx-\omega t]\)</span>. Therefore the total wavefunction is <span id="eq-2waves-superp"><span class="math display">\[
+\Psi(x,t)=\Psi_1(x,t) + \Psi_2(x,t) =2\cos\left[\frac{1}{2}(\Delta k x-\Delta \omega t)\right]\cos[kx-\omega t],
+\tag{2.12}\]</span></span> giving the envelope illustrated in <a href="#fig-2waves-superp">Figure&nbsp;<span>2.7</span></a> for <span class="math inline">\(t=0\)</span>.</p>
+<div id="fig-2waves-superp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/wavepacket_speed_envelope.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.7: Resultant wavefunction of <a href="#eq-2waves-superp">Equation&nbsp;<span>2.12</span></a>, for <span class="math inline">\(t=0\)</span>.</figcaption>
+</figure>
+</div>
+<section id="phase-and-group-velocities" class="level4" data-number="2.4.2.1">
+<h4 data-number="2.4.2.1" class="anchored" data-anchor-id="phase-and-group-velocities"><span class="header-section-number">2.4.2.1</span> Phase and group velocities</h4>
+<p>The wave within the envelope moves at the <strong>phase velocity</strong> given by the term <span class="math inline">\(\cos[kx-\omega t]\)</span> <span id="eq-phase-velocity"><span class="math display">\[
+v_p=\frac{(2\omega+\Delta\omega)/2}{(2 k+\Delta k)/2}\approx \frac{\omega}{k} = \frac{\omega(k)}{k}.
+\tag{2.13}\]</span></span></p>
+<!-- where in the last passage we used the dispersion relation @eq-dispersion-relation. The result indicates that the components of waves with smaller wavenumbers move more slowly. -->
+<p>The other cosine term in <a href="#eq-2waves-superp">Equation&nbsp;<span>2.12</span></a> gives the velocity of the whole envelope, also known as <strong>group velocity</strong> <span id="eq-wave-group-2waves"><span class="math display">\[
+v_g = \frac{\Delta \omega/2}{\Delta k/2}=\frac{\Delta\omega}{\Delta k}.
+\tag{2.14}\]</span></span> In the following section we will see a more accurate form of the velocity group, obtained in the limits for <span class="math inline">\(\Delta\omega \to 0, \Delta k\to 0\)</span>.</p>
+</section>
+</section>
+<section id="adding-more-waves-to-form-a-wavepacket" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="adding-more-waves-to-form-a-wavepacket"><span class="header-section-number">2.4.3</span> Adding more waves to form a wavepacket</h3>
+<p>So how do we create a <em>single localised wavepacket</em> and reduce the surrounding noise?</p>
+<ul>
+<li>Add <em>more waves</em> of different frequencies (more values of momentum/wavenumber)</li>
+<li>Choose conveniently the <em>distribution of the amplitudes</em> of each wave component.</li>
+</ul>
+<p><em>Play with the simulator below: try to find ways to have further wavepackets with small noise between them.</em></p>
+<iframe src="sims/wavepacket_superposition_10_waves.html" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="700" width="700" title="Superposition of waves with different wavenumbers. Change wavenumbers and amplitudes and see their effects on the wavepackets."></iframe>
+<!-- ::: {layout-nrow=4} -->
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div id="fig-superp-2-flat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_2-flat.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.8: Superposition of 2 waves with wavenumbers and amplitudes of <a href="#fig-superp-2-flat-ampl">Figure&nbsp;<span>2.9</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<div id="fig-superp-2-flat-ampl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_2-flat-ampl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.9: Amplitudes vs wavenumber used for the waves of <a href="#fig-superp-2-flat-ampl">Figure&nbsp;<span>2.9</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div id="fig-superp-5-flat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos-5-flat.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.10: Superposition of 5 waves with wavenumbers and amplitudes of <a href="#fig-superp-5-flat-ampl">Figure&nbsp;<span>2.11</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<div id="fig-superp-5-flat-ampl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_5-flat-ampl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.11: Amplitudes vs wavenumber used for the waves of <a href="#fig-superp-5-flat-ampl">Figure&nbsp;<span>2.11</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div id="fig-superp-10-flat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_10-flat.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.12: Superposition of 2 waves with wavenumbers and amplitudes of <a href="#fig-superp-10-flat-ampl">Figure&nbsp;<span>2.13</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<div id="fig-superp-10-flat-ampl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_10-flat-ampl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.13: Amplitudes vs wavenumber used for the waves of <a href="#fig-superp-10-flat-ampl">Figure&nbsp;<span>2.13</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<div id="fig-superp-10-gauss" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_10-gauss.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.14: Superposition of 2 waves with wavenumbers and amplitudes of <a href="#fig-superp-10-gauss-ampl">Figure&nbsp;<span>2.15</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<div id="fig-superp-10-gauss-ampl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/superpos_10-gauss-ampl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.15: Amplitudes vs wavenumber used for the waves of <a href="#fig-superp-10-gauss-ampl">Figure&nbsp;<span>2.15</span></a>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>In the above figures we kept increasing the number of modes (waves at different wavenumbers) and see that adding more waves increases the wavepackets, while changing their weights in the sum (by changing their amplitudes) reduces the noise between wavepackets.</p>
+<p>Now, you get the idea. We can keep increasing the number of waves to eventually isolate a wavepacket. The more we add, the better, so let’s add up a continuum of waves in the <span class="math inline">\(k\)</span>-space (the space of the wavenumbers), with amplitudes dependent on <span class="math inline">\(k\)</span>, obtaining the integral below.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Particle represented by a localised wavepacket
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-wavepacket-cont"><span class="math display">\[
+\Psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \phi(k)e^{i(kx-\omega(k)t)}dk,
+\tag{2.15}\]</span></span> where <span class="math inline">\(\phi(k)\)</span> are the amplitudes in the <span class="math inline">\(k\)</span>-space and provide the so-called <em>spectral content</em> of the wavepackets.</p>
+<p><span class="math inline">\(\Psi(x)\)</span> is the <em>Fourier transform (FT)</em> of <span class="math inline">\(\phi(k)\)</span>, which in fact has the role of a wavefunction too, but in the <span class="math inline">\(k\)</span>-space instead of the position space. So the FT is useful to go back and forth between these two spaces, without loss of information.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The broader the function <span class="math inline">\(\phi(k)\)</span>, the narrower is the wavepacket <span class="math inline">\(\Psi(x,0)\)</span>, satisfying <span class="math inline">\(\Delta k \Delta x\approx 1\)</span> if <span class="math inline">\(\phi(k)\)</span> and <span class="math inline">\(\Psi(x)\)</span> are Gaussians of widths <span class="math inline">\(\Delta k\)</span> and <span class="math inline">\(\Delta x\)</span> respectively. This is not a coincidence, as position and wavenumber (or momentum) are <strong>conjugate variables</strong>, so increasing one will decrease the other. We will expand on this at the end of the chapter.</p>
+</div>
+</div>
+<p>Note that at the time <span class="math inline">\(t=0\)</span>, <a href="#eq-wavepacket-cont">Equation&nbsp;<span>2.15</span></a> gives <span id="eq-wavepacket-t0"><span class="math display">\[
+\Psi(x,0)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \phi(k)e^{ikx}dk.
+\tag{2.16}\]</span></span></p>
+</section>
+<section id="wavepacket-dispersion" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="wavepacket-dispersion"><span class="header-section-number">2.4.4</span> Wavepacket dispersion</h3>
+<p>We have seen that the velocity of each wave (or phase velocity) is, from <a href="#eq-phase-velocity">Equation&nbsp;<span>2.13</span></a>, <span class="math inline">\(v_p=\frac{\omega(k)}{k}\)</span>.</p>
+<p>The whole wavepacket however moves at the group velocity, which for the localised wavepacket of <a href="#eq-wavepacket-cont">Equation&nbsp;<span>2.15</span></a> can be obtained from <a href="#eq-wave-group-2waves">Equation&nbsp;<span>2.14</span></a> in the limit <span class="math inline">\(\Delta k\to 0, \Delta\omega \to 0\)</span>: <span id="eq-group-velocity"><span class="math display">\[
+v_g = \frac{d\omega(k)}{d k}.
+\tag{2.17}\]</span></span></p>
+<p>For the wavepacket to travel without dispersion (i.e.&nbsp;no distorsion), the phase and group velocities must be equal: <span class="math inline">\(v_p=v_g\)</span>.</p>
+<p>For a <em>non-dispersive medium</em> the dissipation relation <a href="#eq-dispersion-rel-non-disp">Equation&nbsp;<span>2.7</span></a> gives a constant phase velocity equal to the group velocity: <span class="math inline">\(v_p=v=v_g\)</span> and the wavepacket doesn’t disperse.</p>
+<p>However, for a dispersive medium with <span class="math inline">\(\omega(k)\propto k^2\)</span> as in <a href="#eq-dispersion-relation">Equation&nbsp;<span>2.9</span></a>, we would obtain <span class="math inline">\(v_p=\frac{\hbar k}{2m}\)</span>, so the components of waves with smaller wavenumbers would move more slowly. In this case the group velocity would be <span id="eq-group-velocity-disp"><span class="math display">\[
+v_g = \frac{d\omega(k)}{d k}\bigg|_{k=k_0}=\frac{\hbar k_0}{m}=\frac{p_0}{m},
+\tag{2.18}\]</span></span></p>
+<p>We can see that the group velocity coincides with that of a particle of mass <span class="math inline">\(m\)</span> and momentum <span class="math inline">\(p_0\)</span>, for a wavepacket centered around <span class="math inline">\(k=k_0\)</span> in <span class="math inline">\(k\)</span>-space.</p>
+<p>Since this is made from a superposition of waves moving at different speeds, we can expect that the wavepacket becomes <em>distorted</em> with time, as the group and the phase velocities are not equal: <span class="math inline">\(v_p\neq v_g\)</span> and the wavepacket is dispersive.</p>
+<!-- 
+We can generalise this introducing the __principle of stationary waves__.
+
+From @eq-wavepacket-cont, consider the exponential as a phase $\phi(k)=kx-\omega(k)t$, which is large and rapidly varying, compared to the slowly varying amplitude function $a(k)$.
+The rapid oscillations of $e^{i\phi(k)}$ over most of the range of integration means that the integrand averages to almost zero, except at points where $\phi(k)$ is stationary, i.e. has a maximum or minimum. -->
+</section>
+<section id="conservation-of-probability" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="conservation-of-probability"><span class="header-section-number">2.4.5</span> Conservation of probability</h3>
+<p>Going back to the definition of the wavepacket of <a href="#eq-wavepacket-cont">Equation&nbsp;<span>2.15</span></a>, having seen that this is the FT of the wavefunction in the <span class="math inline">\(k\)</span>-space, we can use the Parseval identity to relate the probabilities in position-space and k-space: <span id="eq-wavef-parseval"><span class="math display">\[
+\int_{-\infty}^{\infty}|\Psi(x)|^2dx = \int_{-\infty}^{\infty}|\phi(k)|^2dk.
+\tag{2.19}\]</span></span> From this you can notice that the wavefunction must be normalised also in <span class="math inline">\(k\)</span>-space. We can give to <span class="math inline">\(|\phi(k)|^2\)</span> the same meaning of probability in the <span class="math inline">\(k\)</span>-space that we gave to <span class="math inline">\(|\Psi(x)|^2\)</span> in position space.</p>
+<p>Starting from the total probability in position space <span class="math inline">\(\int dx|\Psi(x,t)|^2\)</span>, we can demonstrate that the normalization in the wavenumber (or momentum) <span class="math inline">\(k\)</span>-space is preserved even if we have time evolution: <span id="eq-wavef-ft-norm1"><span class="math display">\[
+\int \Psi^*(x,t)\Psi(x,t)dx=\frac{1}{2\pi}\int dx \int dk \phi^*(k)e^{-i(k x-\omega(k)t)} \int dk' \phi(k')e^{i(k' x-\omega(k')t)},
+\tag{2.20}\]</span></span></p>
+<p>and using the definition and property of the Dirac delta function <span id="eq-dirac-delta"><span class="math display">\[
+\frac{1}{2\pi}\int_{-\infty}^{\infty}dx e^{-i(k-k')x} = \delta(k-k')
+\tag{2.21}\]</span></span> <span id="eq-dirac-delta2"><span class="math display">\[
+\int f(x)\delta(x-x_0)dx=f(x_0),
+\tag{2.22}\]</span></span></p>
+<p><a href="#eq-wavef-ft-norm1">Equation&nbsp;<span>2.20</span></a> gives</p>
+<p><span id="eq-wavef-ft-norm2"><span class="math display">\[
+\int |\Psi(x,t)|^2 dx=\int dk \int dk' \delta(k-k')e^{i(\omega(k)-\omega(k'))t}\phi^*(k)\phi(k')=\int dk |\phi(k)|^2=1.
+\tag{2.23}\]</span></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the probability of finding the particle at a certain value of <span class="math inline">\(k\)</span>, <span class="math inline">\(|\phi(k)|^2\)</span>, is not changing with time: the evolution of each definite-<span class="math inline">\(k\)</span> (or definite-<span class="math inline">\(\omega\)</span>) is just a phase <span class="math inline">\(e^{i\omega(k)t}\)</span> that cancels out using the Dirac delta properties.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="reciprocity-in-wavepackets-and-the-heisenberg-uncertainty-principle" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="reciprocity-in-wavepackets-and-the-heisenberg-uncertainty-principle"><span class="header-section-number">2.5</span> Reciprocity in wavepackets and the Heisenberg uncertainty principle</h2>
+<p>We will now go more in details in concept that we anticipated in the previous few sections, and will see how the wave formalism that we introduced, with the FTs, leads to the Heisenberg’s uncertainty principle.</p>
+<p>To construct the wavepacket for a free particle, the first thing we tried was to use a single plane wave, but we saw that it had an ill-defined position, extending to infinity, i.e.&nbsp;<span class="math inline">\(\Delta x\to \infty\)</span>. We then mentioned that the position and the wavenumber (and so the momentum too) are conjugate variables through the Fourier transform: if you increase one, the other one will decrease. Now we have introduced enough mathematical notation to see that with the FT properties: if we Fourier-transform a single-frequency plane wave, we obtain the Dirac delta-function of <a href="#eq-dirac-delta">Equation&nbsp;<span>2.21</span></a>.</p>
+<p>The same goes, in theory, if we consider a plane wave in <span class="math inline">\(k\)</span>-space: we will have a Dirac delta in position space (extremely localised).</p>
+<p>However, once we start adding more components in <span class="math inline">\(k\)</span>-space (or position space), we narrow down the localisation in the complementary position (or wavenumber/momentum) space, as shown in <a href="#fig-uncertainty-wavepackets">Figure&nbsp;<span>2.16</span></a>.</p>
+<div id="fig-uncertainty-wavepackets" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Quantum_mechanics_travelling_wavefunctions_wavelength.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.16: Position <span class="math inline">\(x\)</span> and momentum <span class="math inline">\(p=\hbar k\)</span> wavefunctions corresponding to quantum particles. The colour opacity of the particles corresponds to the probability density of finding the particle with position <span class="math inline">\(x\)</span> or momentum component <span class="math inline">\(p\)</span>. Top: If wavelength <span class="math inline">\(\lambda\)</span> is unknown, so are momentum <span class="math inline">\(p\)</span>, wave-vector <span class="math inline">\(k\)</span> and energy <span class="math inline">\(E\)</span> (de Broglie relations). As the particle is more localized in position space, <span class="math inline">\(\Delta x\)</span> is smaller than for <span class="math inline">\(\Delta p_x\)</span>. Bottom: If <span class="math inline">\(\lambda\)</span> is known, so are <span class="math inline">\(p\)</span>, <span class="math inline">\(k\)</span>, and <span class="math inline">\(E\)</span>. As the particle is more localized in momentum space, <span class="math inline">\(\Delta p\)</span> is smaller than for <span class="math inline">\(\Delta x\)</span>. Source: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Quantum_mechanics_travelling_wavefunctions_wavelength.svg/502px-Quantum_mechanics_travelling_wavefunctions_wavelength.svg.png">Wikipedia</a></figcaption>
+</figure>
+</div>
+<p>So how do we get a good trade-off between localisation in position and momentum space, minimizing both uncertainties <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta k\)</span> (or <span class="math inline">\(\Delta p\)</span>)?</p>
+<p>Remember the simulation and the outputs of <a href="#fig-superp-10-gauss">Figure&nbsp;<span>2.14</span></a>, where we found that adding more components with different wavenumbers and a certain distribution of amplitudes <span class="math inline">\(\phi(k)\)</span> gives more distinct and “clean” wave groups.</p>
+<p>It turns out that when we go to the continuum to build the localised wavepacket from the FT of plane waves in momentum space, <em>the best function of <span class="math inline">\(\phi(k)\)</span> that can be used to obtain a good wavepacket that minimizes uncertainty in both position and momentum space is a Gaussian!</em></p>
+<section id="gaussian-wavepackets" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="gaussian-wavepackets"><span class="header-section-number">2.5.1</span> Gaussian wavepackets</h3>
+<p>Let’s consider the following Gaussian wavepacket with a standard deviation <span class="math inline">\(\sigma(k) = 1/\sqrt{4\alpha}\)</span> centered about <span class="math inline">\(k=k_0\)</span> in momentum space:</p>
+<p><span id="eq-gaussian-kspace"><span class="math display">\[
+\phi(k)\sim e^{-\alpha(k-k_0)^2}.
+\tag{2.24}\]</span></span></p>
+<p><strong>Why a Gaussian?</strong></p>
+<p>The FT of a Gaussian is still a Gaussian!</p>
+<p>From <a href="#eq-wavepacket-cont">Equation&nbsp;<span>2.15</span></a>, using the Gaussian amplitude distribution of <a href="#eq-gaussian-kspace">Equation&nbsp;<span>2.24</span></a>: <span class="math display">\[
+\Psi(x)=\frac{1}{\sqrt{2\pi}}\int dk e^{-\alpha(k-k_0)^2}e^{ikx},
+\]</span> and defining <span class="math inline">\(K=k-k_0\)</span> this gives <span class="math display">\[
+\Psi(x)=\frac{e^{ik_0x}}{\sqrt{2\pi}}\int dK e^{-\alpha(K^2-iKx/\alpha)}.
+\]</span> Using the trick of “completing the square”, the above equation becomes <span class="math display">\[
+\Psi(x)=\frac{e^{ik_0x}}{\sqrt{2\pi}}\int dK e^{-\alpha(K-iKx/2\alpha)^2}e^{-x^2/4\alpha}.
+\]</span> After another change of variables <span class="math inline">\(K'=K-ix/2\alpha\)</span>: <span id="eq-gaussian-xspace"><span class="math display">\[
+\Psi(x)=\frac{e^{ik_0x}e^{-x^2/4\alpha}}{\sqrt{2\pi}}\int dK' e^{-\alpha K'^2}=\frac{e^{ik_0x}e^{-x^2/4\alpha}}{\sqrt{2\alpha}},
+\tag{2.25}\]</span></span> where in the last passage we used the Gaussian integral <span class="math inline">\(\int_{-\infty}^{\infty} dz e^{-\alpha z^2} =\sqrt{\frac{\pi}{\alpha}}\)</span>.</p>
+<p>Note that the exponential term with the central momentum <span class="math inline">\(k_0\)</span> is just a phase factor, since all the <span class="math inline">\(k\)</span> are integrated.</p>
+<p>The resulting Gaussian of <a href="#eq-gaussian-xspace">Equation&nbsp;<span>2.25</span></a> has a standard deviation <span class="math inline">\(\sigma(x) = \sqrt{\alpha}\)</span>.</p>
+<p>The product of the widhts of the two Gaussian in <span class="math inline">\(k\)</span>-space and <span class="math inline">\(x\)</span>-space is therefore a constant independent of <span class="math inline">\(\alpha\)</span>, showing that the relation is reciprocal:</p>
+<p><span id="eq-sigmax-sigmak"><span class="math display">\[
+\sigma(x)\sigma(k)=\sqrt{\alpha}\frac{1}{\sqrt{4\alpha}}=\frac{1}{2}.
+\tag{2.26}\]</span></span></p>
+<p>If we associate the uncertainty on position and momentum to the above standard deviations, i.e.&nbsp;<span class="math inline">\(\sigma(x)\to \Delta x\)</span> and <span class="math inline">\(\sigma(k)\to \Delta k\)</span>, and use the wavenumber definition <span class="math inline">\(k=p/\hbar\)</span>, <a href="#eq-sigmax-sigmak">Equation&nbsp;<span>2.26</span></a> becomes <span id="eq-heisenberg-equality"><span class="math display">\[
+\Delta x \Delta p=\frac{\hbar}{2}.
+\tag{2.27}\]</span></span></p>
+<p>Now, this is something that looks like the well known Heisenberg’s uncertainty principle, except for the fact that it is an equality! In fact, earlier on we mentioned that using Gaussian for the amplitude functions (either in position or momentum space) gives the <em>minimum uncertainty</em> in position and momentum, i.e.&nbsp;the equality of <a href="#eq-heisenberg-equality">Equation&nbsp;<span>2.27</span></a>.</p>
+<p>If we use any other function, we would get less precision on the uncertainties, which are related by the Heisenberg uncertainty below.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>##&nbsp;Heisenberg uncertainty relation <span id="eq-heisenberg-inequality-xp"><span class="math display">\[
+\Delta x \Delta p \geq \frac{\hbar}{2}.
+\tag{2.28}\]</span></span></p>
+<p>The same kind of relation can be applied to <em>any other conjugate variables</em>, such as frequency <span class="math inline">\(\omega\)</span> (or energy <span class="math inline">\(E\)</span>) and time <span class="math inline">\(t\)</span>:</p>
+<p><span id="eq-heisenberg-inequality-et"><span class="math display">\[
+\Delta E \Delta t \geq \frac{\hbar}{2}.
+\tag{2.29}\]</span></span></p>
+</div>
+</div>
+<p>In the next section we will focus on the physical meaning and interpretation of the Heisenberg uncertainty principle.</p>
+</section>
+<section id="heisenbergs-uncertainty-principle---implications" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="heisenbergs-uncertainty-principle---implications"><span class="header-section-number">2.5.2</span> Heisenberg’s uncertainty principle - implications</h3>
+<p>The Heisenberg’s uncertainty relation is central in quantum mechanics and explains things such as the breakdown of the double slit on observation, or the natural spectral linewidths, through <a href="#eq-heisenberg-inequality-et">Equation&nbsp;<span>2.29</span></a>. It was originally derived by Heisenberg in his matrix mechanics formalism and we shall see it again in the context of operator algebra. In some textbooks/sources you may find <span class="math inline">\(\hbar\)</span> instead of <span class="math inline">\(\hbar/2\)</span>: the factor of 2 is not deeply meaningful, the Planck constant is.</p>
+<p>Qualitatively, the effects are profound: it tells us that if position is constrained then momentum must become uncertain and vice versa, and the general scaling relationship between the two. Many thought experiments can be constructed around attempts to circumvent this limit, always failing due to some consequence of the variables’ conjugacy.</p>
+<ul>
+<li>It is also responsible for avoiding the in-spiral and collapse of the Bohr atom: as an electron falls in and becomes localised near the nucleus at <span class="math inline">\(r = 0\)</span>, its root-mean-square momentum increases, and hence so does its kinetic energy: the ground state of minimum energy is not located at <span class="math inline">\(r = 0\)</span>, but instead at a finite distance and electrostatic potential.</li>
+<li>The Hesenberg’s uncertainty principle is also central in the natural spectral linewidths, which arises from <a href="#eq-heisenberg-inequality-et">Equation&nbsp;<span>2.29</span></a>.</li>
+</ul>
+<section id="uncertainties-in-the-double-slit-experiment" class="level4" data-number="2.5.2.1">
+<h4 data-number="2.5.2.1" class="anchored" data-anchor-id="uncertainties-in-the-double-slit-experiment"><span class="header-section-number">2.5.2.1</span> Uncertainties in the double-slit experiment</h4>
+<p>The Heisenberg uncertainty relation also explains why the interference pattern disappears in the double-slit experiment, if we <em>observe</em> the path of individual particles. This is in short because the observation of the position (which reduces the uncertainty <span class="math inline">\(\Delta x\)</span>) will increase the uncertainty in the momentum sufficient to destroy the interference pattern. Let’s see this a bit more in detail.</p>
+<div id="fig-double-slit-uncertainty" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/heisenberg-young.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.17: Setup of the double slit experiment to (try to) determine which slit the electron goes through.</figcaption>
+</figure>
+</div>
+<p>In order to understand which slit the particle goes through, we place some particles right behind the slits, as shown in <a href="#fig-double-slit-uncertainty">Figure&nbsp;<span>2.17</span></a>, to use the recoil of small particles to have information on the path taken by electrons. Too see which slit each electron goes through, we must have an uncertainty on the detecting particle’s position <span id="eq-uncertainty-slit-y"><span class="math display">\[
+\Delta y\ll D.
+\tag{2.30}\]</span></span> Also, during the collision, the detecting particle changes its momentum of a quantity <span class="math inline">\(\Delta p_y\)</span>, equal and opposite to the electron’s change in momentum. If the electron is not deviated by an observation, it hits the screen producing the interference pattern having a first minimum given by (see <a href="#fig-double-slit-uncertainty">Figure&nbsp;<span>2.17</span></a>) <span class="math display">\[
+\tan\theta \approx \theta =\frac{p_y}{p_x}=\frac{h}{2p_x D}.
+\]</span></p>
+<p>In order to preserve the interference pattern we should therefore have <span class="math display">\[
+\frac{\Delta p_y}{p_x}\ll \theta = \frac{h}{2p_x D}\implies \Delta p_y\ll \frac{h}{2D}
+\]</span> both for the electron and the detecting particle (since their change in momentum is the same). Therefore, from <a href="#eq-uncertainty-slit-y">Equation&nbsp;<span>2.30</span></a> we would obtain <span class="math display">\[
+\Delta p_y \Delta y \ll \frac{h}{2D}D=\frac{h}{2},
+\]</span></p>
+<p>which clearly violates the Heisenberg uncertainty principle <a href="#eq-heisenberg-inequality-xp">Equation&nbsp;<span>2.28</span></a>! In fact, any possible experiment we can imagine aimed at determining which slit the electron goes through, would give an uncertainty in momentum that is too big to still obtain the interference pattern.</p>
+</section>
+<section id="uncertainties-in-the-harmonic-oscillator" class="level4" data-number="2.5.2.2">
+<h4 data-number="2.5.2.2" class="anchored" data-anchor-id="uncertainties-in-the-harmonic-oscillator"><span class="header-section-number">2.5.2.2</span> Uncertainties in the harmonic oscillator</h4>
+<p>This will be more clear when we do the quantum harmonic oscillator, but for now we can anticipate that the ground state (state of minimum energy) of the quantum harmonic oscillator has non-zero energy, and this is due to the Heisenberg’s uncertainty principle.</p>
+<p>The (classical) harmonic oscillator is given by the following energy: <span class="math display">\[
+E = T+V = \frac{p^2}{2m}+\frac{1}{2}m\omega^2 x^2,
+\]</span></p>
+<p>where the first term is the kinetic energy and the quadratic term is the potential energy.</p>
+<p>Qualitatively: since the potential is harmonic, if the particle was exactly at the bottom of the potential with zero uncertainty, paradoxically the kinetic term related to the momentum would have to go to infinity because of the uncertainty principle.</p>
+<p>For a quantitative description, we will come back to this after doing the quantum harmonic oscillator.</p>
+</section>
+</section>
+</section>
+<section id="summary" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.6</span> Summary</h2>
+<ul>
+<li><p>Matter and light exhibit both wave-like and particle-like properties, depending on the experimental conditions (e.g., electrons in the double-slit experiment)​.</p></li>
+<li><p>The wavefunction <span class="math inline">\(\Psi(x,t)\)</span> is a complex function describing the quantum state of a particle, and the probability density of finding the particle at the position <span class="math inline">\(x\)</span> at time <span class="math inline">\(t\)</span> is proportional to <span class="math inline">\(|\Psi(x,t)|^2\)</span>.</p></li>
+<li><p>Quantum states can exist in a superposition, where the total probability amplitude is the sum of individual amplitudes (e.g., <span class="math inline">\(\Psi=\Psi_1+\Psi_2\)</span> in the double-slit experiment).</p></li>
+<li><p>A single plane wave is not physically realistic to describe a free particle as this would be infinitely delocalised; we need to add an infinite number of weighted plane waves to form a wavepacket localised in space, obtaining the FT of a wavefunction in momentum space.</p></li>
+<li><p>There is a fundamental limit to how precisely two <em>conjugate variables</em> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> (e.g.&nbsp;momentum and position) can be measured <em>simultaneously</em>: <span class="math inline">\(\Delta A \Delta B \geq \frac{\hbar}{2}\)</span>, i.e.&nbsp;when one is wide, the other is narrow.</p></li>
+</ul>
+<hr>
+</section>
+<section id="references" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="references"><span class="header-section-number">2.7</span> References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Feynman:1494701" class="csl-entry" role="listitem">
+Feynman, Richard Phillips, Robert Benjamin Leighton, and Matthew Sands. 2010. <em><span class="nocase">The Feynman lectures on physics; New millennium ed.</span></em> New York, NY: Basic Books. <a href="https://cds.cern.ch/record/1494701">https://cds.cern.ch/record/1494701</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./p3qm-1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Origins of QM</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./p3qm-3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Schrödinger equation and some QM formalism</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
