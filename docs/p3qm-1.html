@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr Rosaria Lena">
+<meta name="dcterms.date" content="2025-01-06">
+<meta name="description" content="Lectures 1-3 - use Bransden - Joachain for reference">
+
+<title>P3 Quantum Mechanics - 1&nbsp; Origins of QM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./p3qm-2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./p3qm-1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Origins of QM</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Origins of QM</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+                  <div>
+        <div class="description">
+          <em>Lectures 1-3</em> - use <em>Bransden - Joachain</em> for reference
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">email</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Dr Rosaria Lena </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              rosaria.lena@glasgow.ac.uk
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 6, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">P3 Quantum Mechanics</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./P3-Quantum-Mechanics.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./P3-Quantum-Mechanics.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Origins of QM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wavefunctions and the uncertainty principle</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Schrödinger equation and some QM formalism</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Solutions of Schrödinger Equations in 1D - Bound states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Solutions of Schrödinger Equations in 1D - Scattering states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Angular momentum theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary of exercises</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./p3qm-faqs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">FAQs</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><strong>Learning objectives</strong></a></li>
+  <li><a href="#a-quick-introduction-to-quantum-mechanics" id="toc-a-quick-introduction-to-quantum-mechanics" class="nav-link" data-scroll-target="#a-quick-introduction-to-quantum-mechanics"><span class="header-section-number">1.1</span> A quick introduction to Quantum Mechanics</a>
+  <ul class="collapse">
+  <li><a href="#quantum-mechanics-timeline" id="toc-quantum-mechanics-timeline" class="nav-link" data-scroll-target="#quantum-mechanics-timeline"><span class="header-section-number">1.1.1</span> Quantum mechanics timeline</a></li>
+  <li><a href="#two-equivalent-formulations-of-quantum-mechanics" id="toc-two-equivalent-formulations-of-quantum-mechanics" class="nav-link" data-scroll-target="#two-equivalent-formulations-of-quantum-mechanics"><span class="header-section-number">1.1.2</span> Two equivalent formulations of quantum mechanics</a></li>
+  </ul></li>
+  <li><a href="#blackbody-radiation-and-the-ultraviolet-catastrophe" id="toc-blackbody-radiation-and-the-ultraviolet-catastrophe" class="nav-link" data-scroll-target="#blackbody-radiation-and-the-ultraviolet-catastrophe"><span class="header-section-number">1.2</span> Blackbody radiation and the ultraviolet catastrophe</a>
+  <ul class="collapse">
+  <li><a href="#the-black-body-spectrum-observed-in-the-1890s" id="toc-the-black-body-spectrum-observed-in-the-1890s" class="nav-link" data-scroll-target="#the-black-body-spectrum-observed-in-the-1890s">The black-body spectrum… observed? In the 1890s?!</a></li>
+  <li><a href="#wiens-law-1893" id="toc-wiens-law-1893" class="nav-link" data-scroll-target="#wiens-law-1893"><span class="header-section-number">1.2.1</span> Wien’s law (1893)</a></li>
+  <li><a href="#wiens-displacement-law" id="toc-wiens-displacement-law" class="nav-link" data-scroll-target="#wiens-displacement-law"><span class="header-section-number">1.2.2</span> Wien’s displacement law</a></li>
+  <li><a href="#rayleigh-jeans-model-1900" id="toc-rayleigh-jeans-model-1900" class="nav-link" data-scroll-target="#rayleigh-jeans-model-1900"><span class="header-section-number">1.2.3</span> Rayleigh-Jeans model (1900)</a></li>
+  <li><a href="#sec-RJ-derivation" id="toc-sec-RJ-derivation" class="nav-link" data-scroll-target="#sec-RJ-derivation"><span class="header-section-number">1.2.4</span> Derivation of the Rayleigh-Jeans law</a></li>
+  <li><a href="#plancks-law-1900" id="toc-plancks-law-1900" class="nav-link" data-scroll-target="#plancks-law-1900"><span class="header-section-number">1.2.5</span> Planck’s Law (1900)</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.2.6</span> <span style="color:#336699;">Exercise</span></a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">1.2.7</span> <span style="color:#336699;">Exercise</span></a></li>
+  <li><a href="#blackbody-radiation-and-the-cosmic-microwave-background" id="toc-blackbody-radiation-and-the-cosmic-microwave-background" class="nav-link" data-scroll-target="#blackbody-radiation-and-the-cosmic-microwave-background"><span class="header-section-number">1.2.8</span> Blackbody radiation and the cosmic microwave background</a></li>
+  </ul></li>
+  <li><a href="#photoelectric-effect" id="toc-photoelectric-effect" class="nav-link" data-scroll-target="#photoelectric-effect"><span class="header-section-number">1.3</span> Photoelectric effect</a></li>
+  <li><a href="#the-nuclear-atom" id="toc-the-nuclear-atom" class="nav-link" data-scroll-target="#the-nuclear-atom"><span class="header-section-number">1.4</span> The nuclear atom</a>
+  <ul class="collapse">
+  <li><a href="#the-classical-problems-with-rutherfords-model" id="toc-the-classical-problems-with-rutherfords-model" class="nav-link" data-scroll-target="#the-classical-problems-with-rutherfords-model"><span class="header-section-number">1.4.1</span> The ‘classical’ problems with Rutherford’s model</a></li>
+  <li><a href="#the-bohr-model" id="toc-the-bohr-model" class="nav-link" data-scroll-target="#the-bohr-model"><span class="header-section-number">1.4.2</span> The Bohr model</a></li>
+  <li><a href="#bohrs-correspondence-principle" id="toc-bohrs-correspondence-principle" class="nav-link" data-scroll-target="#bohrs-correspondence-principle"><span class="header-section-number">1.4.3</span> Bohr’s correspondence principle</a></li>
+  <li><a href="#historical-remark-arthur-erich-haas" id="toc-historical-remark-arthur-erich-haas" class="nav-link" data-scroll-target="#historical-remark-arthur-erich-haas">Historical remark: Arthur Erich Haas</a></li>
+  <li><a href="#comptons-scattering" id="toc-comptons-scattering" class="nav-link" data-scroll-target="#comptons-scattering"><span class="header-section-number">1.4.4</span> Compton’s scattering</a></li>
+  <li><a href="#the-problems-with-bohrs-model" id="toc-the-problems-with-bohrs-model" class="nav-link" data-scroll-target="#the-problems-with-bohrs-model"><span class="header-section-number">1.4.5</span> The problems with Bohr’s model</a></li>
+  </ul></li>
+  <li><a href="#de-broglies-hypothesis-and-matter-waves" id="toc-de-broglies-hypothesis-and-matter-waves" class="nav-link" data-scroll-target="#de-broglies-hypothesis-and-matter-waves"><span class="header-section-number">1.5</span> De Broglie’s hypothesis and matter waves</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-of-the-bohrs-circular-orbits" id="toc-interpretation-of-the-bohrs-circular-orbits" class="nav-link" data-scroll-target="#interpretation-of-the-bohrs-circular-orbits"><span class="header-section-number">1.5.1</span> Interpretation of the Bohr’s circular orbits</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">1.5.2</span> <span style="color:#336699;">Exercise</span></a></li>
+  <li><a href="#electron-diffraction-experiments" id="toc-electron-diffraction-experiments" class="nav-link" data-scroll-target="#electron-diffraction-experiments"><span class="header-section-number">1.5.3</span> Electron diffraction experiments</a></li>
+  </ul></li>
+  <li><a href="#schrödingers-atomic-model-a-really-quantum-model-of-the-atom" id="toc-schrödingers-atomic-model-a-really-quantum-model-of-the-atom" class="nav-link" data-scroll-target="#schrödingers-atomic-model-a-really-quantum-model-of-the-atom"><span class="header-section-number">1.6</span> (1926) Schrödinger’s atomic model: a <em>really</em> quantum model of the atom</a>
+  <ul class="collapse">
+  <li><a href="#electron-orbitals" id="toc-electron-orbitals" class="nav-link" data-scroll-target="#electron-orbitals"><span class="header-section-number">1.6.1</span> Electron orbitals</a></li>
+  </ul></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap"><span class="header-section-number">1.7</span> Recap</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="learning-objectives" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="learning-objectives"><strong>Learning objectives</strong></h2>
+<ol type="1">
+<li>Understanding the key historical context that led to quantum mechanics</li>
+<li>Identifying key problems in classical physics, such as the ultraviolet catastrophe, and understanding how quantum concepts provided solutions.</li>
+<li>Explaining and summarising the significance of foundation experiments like black-body radiation, Compton scattering and the photoelectric effect, in the development of quantum mechanics.</li>
+<li>Understanding the concept of wave-particle duality and its experimental confirmations</li>
+<li>Tracing the evolution of atomic models from Rutherford to Bohr</li>
+<li>Recognising the foundational role of early quantum mechanics in modern physics.</li>
+</ol>
+<p><em>This lecture mostly covers Chapter 6 of <span class="citation" data-cites="bransden1989introduction">(<a href="#ref-bransden1989introduction" role="doc-biblioref">Bransden and Joachain 1989</a>)</span>.</em></p>
+<hr>
+</section>
+<section id="a-quick-introduction-to-quantum-mechanics" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="a-quick-introduction-to-quantum-mechanics"><span class="header-section-number">1.1</span> A quick introduction to Quantum Mechanics</h2>
+<p><strong>What do you know about quantum mechanics?</strong></p>
+<ul>
+<li>Schrödinger’s cat?</li>
+<li>Heisenberg’s uncertainty principle?</li>
+<li>Double slit experiment?</li>
+<li>Ultraviolet catastrophe?</li>
+</ul>
+<section id="quantum-mechanics-timeline" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="quantum-mechanics-timeline"><span class="header-section-number">1.1.1</span> Quantum mechanics timeline</h3>
+<div id="fig-QMtimeline" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/QM_timeline.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.1: A brief timeline of Quantum Mechanics</figcaption>
+</figure>
+</div>
+<p>The <a href="https://prezi.com/p/embed/st7aftj7_qny/">following timeline</a> is a bit more detailed… still very brief. Pay attention however to the timescale at which these discoveries happened!</p>
+<iframe src="https://prezi.com/p/embed/st7aftj7_qny/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="315" width="500" title="A (slightly) more detailed timeline. Correction: Broglie -> De Broglie. Credits: J. Williams."></iframe>
+</section>
+<section id="two-equivalent-formulations-of-quantum-mechanics" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="two-equivalent-formulations-of-quantum-mechanics"><span class="header-section-number">1.1.2</span> Two equivalent formulations of quantum mechanics</h3>
+<p>Quantum mechanics was proposed at nearly the same time (see timeline above) using two different but equivalent formulations:</p>
+<ul>
+<li><p><strong>Wave mechanics</strong>: proposed by Schrödinger in 1925, following the de Broglie idea about matter waves (we’ll see this towards the end of this chapter). We will start with this description, that you are more familiar with, for the first part of the course.</p></li>
+<li><p><strong>Matrix mechanics</strong>: developed by Heisenberg, Born and Jordan in 1925-1926, which uses non-commutative algebra and associates to each physical quantity and physical “observables” a matrix. This can be more convenient to describe two-level systems, the quantum harmonic oscillator or the angular momentum. We will start using this once we introduce the quantum harmonic oscillator.</p></li>
+</ul>
+<p>These two approaches were then unified in a general formulation of quantum mechanics, developed by Dirac and Von Neumann in 1930-1932.</p>
+<p><em>What led to the necessity of a quantum mechanics framework? Where and how did classical physics fail?</em></p>
+<p>In the following we will discuss the historical motivations that led to the development of quantum mechanics.</p>
+</section>
+</section>
+<section id="blackbody-radiation-and-the-ultraviolet-catastrophe" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="blackbody-radiation-and-the-ultraviolet-catastrophe"><span class="header-section-number">1.2</span> Blackbody radiation and the ultraviolet catastrophe</h2>
+<ul>
+<li>A body that totally absorbs all radiation that falls upon it is called a <strong>blackbody</strong>. You can think of it as a perfect absorber of radiation.</li>
+<li>A blackbody is in thermal equilibrium, so it has a temperature <span class="math inline">\(T\)</span>.</li>
+<li>Since a blackbody absorbs energy and it is in thermal equilibrium, then it must also be a perfect emitter (i.e.&nbsp;emit across all wavelengths): a blackbody is a perfect absorber but it is also a perfect emitter.</li>
+<li>Emitted radiation depends only upon the radiator’s temperature, and the <em>total emissive power</em>, or <em>total emittance</em>, or <em>spectral radiance</em>, of a black hole follows the <strong>Stefan-Boltzman law</strong>:</li>
+</ul>
+<p><span id="eq-stefan-boltzmann-law"><span class="math display">\[
+R(T) = \sigma T^4,
+\tag{1.1}\]</span></span></p>
+<p>where we defined the Stefan’s constant <span class="math display">\[\sigma = 5.61\times 10^{-8} \mathrm{W m}^{-2}\mathrm{K}^{-4}.\]</span></p>
+<p>A typical classic model for a perfect blackbody is a black cavity with a small hole (see <a href="#fig-bb-radiator">Figure&nbsp;<span>1.2</span></a>): all the light entering is reflected multiple times across the black walls and is (almost completely) absorbed. Since the cavity is in thermal equilibrium, the emitted radiation depends only on its temperature, so the cavity emits like a black body.</p>
+<div id="fig-bb-radiator" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/bb_radiator.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.2: A perfect blackbody radiator.</figcaption>
+</figure>
+</div>
+<p><a href="#eq-stefan-boltzmann-law">Equation&nbsp;<span>1.1</span></a> describes the <em>total</em> emittance, i.e.&nbsp;the emission power per unit area at all wavelengths, but what is the distribution of radiation across wavelengths (or frequencies) that a black body emits? In mathematical terms, we previously found a form for <span class="math inline">\(R(T)\)</span>, but want to know the <em>emittance at a given wavelength</em> <span class="math inline">\(R(\lambda,T)\)</span>, and the total emittance is obviously obtained by integrating this over all the wavelengths: <span id="eq-total-emittance-integral"><span class="math display">\[R(T)=\int_0^{\infty} R(\lambda,T)d\lambda.
+\tag{1.2}\]</span></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The emission spectra of black bodies (the energy emitted against the wavelength or frequency) depend only on their temperature <span class="math inline">\(T\)</span>.</p>
+</div>
+</div>
+<p>In the following we will also refer to the wavelength (or frequency) <em>monochromatic energy density</em> <span class="math inline">\(u(\lambda,T)\)</span> (or <span class="math inline">\(u(\nu,T)\)</span>). The relation between the spectral emittance and the energy density can be shown <span class="citation" data-cites="richtmyer1969introduction">(<a href="#ref-richtmyer1969introduction" role="doc-biblioref">Richtmyer, Kennard, and Cooper 1969</a>)</span> to be <span id="eq-energy-density-emittance"><span class="math display">\[
+u(\lambda,T)=\frac{4}{c}R(\lambda,T),
+\tag{1.3}\]</span></span> so from the measurement of the emission spectrum one could determine the energy density.</p>
+<p>So what is the form of the emission spectrum of a black body? Although the spectrum of black-body radiation was <em>known observationally</em> (how?!), its theoretical description has puzzled physicists at the end of the 19th Century and many attempts to describe this ran into trouble. It cannot be fully explained using classical physics, it requires quantum physics, as we will see in the following.</p>
+<section id="the-black-body-spectrum-observed-in-the-1890s" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-black-body-spectrum-observed-in-the-1890s">The black-body spectrum… observed? In the 1890s?!</h3>
+<p>You might be wondering how back in the days (1890-ish) physicists already knew the shape of the EM power spectrum… if you are, that’s a good question and you’re not alone. For this, let’s thank Samuel Langley and his <em>bolometer</em>.</p>
+<blockquote class="blockquote">
+<p>Ohhhh…<br>
+Langley invented the bolometer,<br>
+A very fine sort of thermometer.<br>
+It can measure the heat,<br>
+Of a polar bear’s feet<br>
+At the distance of half a kilometer.</p>
+</blockquote>
+<p>[via J.M. Pasachoff, Contemporary Astronomy (Saunders College Publishers, Philadelphia, 1985)]</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-Langley" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Langley.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.3: Samuel Langley, inventor of the bolometer.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-bolometer" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/bolometer.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.4: Scheme and illustration of the bolometer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The rest of Langley’s work/life story is also worth checking out, ranging from effectively inventing standard time to pioneering powered flight!</p>
+</section>
+<section id="wiens-law-1893" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="wiens-law-1893"><span class="header-section-number">1.2.1</span> Wien’s law (1893)</h3>
+<p>From general thermodynamical arguments, in 1893 Wien showed that the black-body energy density had to take the form <span id="eq-wien-en-density-wavel"><span class="math display">\[
+u_{\lambda}(\lambda,T)=\frac{dE}{d\lambda}=\lambda^{-5}f(\lambda T),
+\tag{1.4}\]</span></span> or in terms of the frequency: <span id="eq-wien-en-density-freq"><span class="math display">\[
+u_{\nu}(\nu,T)=\frac{dE}{d\nu}=\nu^3 g(\nu/T),
+\tag{1.5}\]</span></span> where <span class="math inline">\(f(\lambda T)\)</span> and <span class="math inline">\(g(\nu/T)\)</span> are universal functions that depend solely upon <span class="math inline">\(\lambda T\)</span> and <span class="math inline">\(\nu/T\)</span> respectively and cannot be derived thermodynamically, so they have to be found empirically.</p>
+<p>Wien’s empirical guess was that <span class="math inline">\(f(\lambda T)\)</span> in <a href="#eq-wien-en-density-freq">Equation&nbsp;<span>1.5</span></a> had the form <span class="math display">\[
+f(\lambda T) = C \exp \left(-\frac{A}{\lambda T}\right).
+\]</span></p>
+<p><a href="#eq-wien-en-density-freq">Equation&nbsp;<span>1.5</span></a> is called Wien’s law, also referred to as Wien’s approximation or Wien’s model (not to be confused with ‘Wien’s displacement law’!), and it is a good model for the observed spectrum at short wavelength (high frequencies) <span class="math inline">\(hc\gg k_BT\lambda\)</span>, but it is not accurate at high wavelengths.</p>
+<p>In <a href="#eq-energy-density-emittance">Equation&nbsp;<span>1.3</span></a> we showed the relation between the spectral emittance and the energy density, from which Wien derived the explicit form of <strong>Wien’s approximation</strong> for the spectral emittance (after attempting to derive the function <span class="math inline">\(f(\lambda T)\)</span>). This is shown in <a href="#eq-Wien_approx">Equation&nbsp;<span>1.6</span></a> and an example is plotted in <a href="#fig-wien-plot">Figure&nbsp;<span>1.5</span></a>.</p>
+<p>Note that Wien’s law did not initially contain fundamental constants, which were later introduced by Max Planck.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wien’s approximation for the spectral emittance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-Wien_approx"><span class="math display">\[
+R_\lambda^\mathrm{Wien}(\lambda, T) = \frac{2 hc^2}{\lambda^5}\exp\left(-\frac{hc}{\lambda k_B T}\right)
+\tag{1.6}\]</span></span></p>
+</div>
+</div>
+<div class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">from</span> astropy.constants <span class="im">import</span> k_B, c, h</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="im">from</span> matplotlib <span class="im">import</span> rc</span>
+<span id="cb1-7"><a href="#cb1-7"></a>rc(<span class="st">'text'</span>,usetex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>rc(<span class="st">'font'</span>,size<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>rc(<span class="st">'figure'</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>l <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3000</span>,<span class="dv">1000</span>) <span class="co"># Wavelength, nm</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>T <span class="op">=</span> <span class="dv">4000</span> <span class="co"># Temperature, Kelvin</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>T2 <span class="op">=</span> <span class="dv">3000</span> <span class="co"># Temperature, Kelvin</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>B_wien<span class="op">=</span><span class="dv">2</span> <span class="op">*</span> h.value <span class="op">*</span>c.value<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>h.value<span class="op">*</span>c.value<span class="op">/</span>((l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">*</span>k_B.value<span class="op">*</span>T)) <span class="op">/</span> (l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">**</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>B_wien2 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> h.value <span class="op">*</span>c.value<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>h.value<span class="op">*</span>c.value<span class="op">/</span>((l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">*</span>k_B.value<span class="op">*</span>T2)) <span class="op">/</span> (l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">**</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>plt.plot(l, B_wien, label<span class="op">=</span><span class="st">"T=4000K"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19"></a>plt.plot(l, B_wien2, label<span class="op">=</span><span class="st">"T=3000K"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>plt.xlabel(<span class="vs">r'Wavelength $\lambda$ (nm)'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22"></a>plt.ylabel(<span class="vs">r'Spectral Radiance $R(\lambda, T)$ (Wm$^{-3}$sr$^{-1}$)'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23"></a>plt.title(<span class="st">'Spectral radiance - Wien model'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24"></a>plt.ylim([<span class="dv">0</span>,<span class="fl">5e12</span>])</span>
+<span id="cb1-25"><a href="#cb1-25"></a>plt.grid()</span>
+<span id="cb1-26"><a href="#cb1-26"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-wien-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="p3qm-1_files/figure-html/fig-wien-plot-output-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.5: Spectral radiance plotted using the Wien’s approximation (<a href="#eq-Wien_approx">Equation&nbsp;<span>1.6</span></a>), for T=4000K and T=3000K.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Problems with the Wien’s approximation</strong>:</p>
+<ul>
+<li>This model works well at small wavelengths but it is not very good at high wavelengths - low frequencies.</li>
+<li>Thermodynamical reasoning is not sufficient to derive an accurate model.</li>
+</ul>
+</section>
+<section id="wiens-displacement-law" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="wiens-displacement-law"><span class="header-section-number">1.2.2</span> Wien’s displacement law</h3>
+<p>From <a href="#fig-wien-plot">Figure&nbsp;<span>1.5</span></a> we see that this model shows peak of the spectral emission at different wavelengths that depend on the temperature of the black body. The relationship between these two quantities is given by the Wien’s displacement law (<a href="#eq-wiens-displacement-law">Equation&nbsp;<span>1.7</span></a>).</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wien’s displacement law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-wiens-displacement-law"><span class="math display">\[
+\lambda_{max} = \frac{b}{T}
+\tag{1.7}\]</span></span></p>
+<p><span class="math inline">\(\lambda_{max}\)</span> - value of the wavelength corresponding to the peak<br>
+<span class="math inline">\(b\approx 2.8978 \times 10^{-3} \mathrm{m}\cdot\mathrm{K}\)</span> - Wien’s displacement constant<br>
+<span class="math inline">\(T\)</span> - absolute temperature.</p>
+</div>
+</div>
+<section id="wiens-displacement-law-derivation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="wiens-displacement-law-derivation">Wien’s displacement law derivation</h4>
+<p>Demonstrate qualitatively the Wien’s displacement law relation between the maximum wavelength and the temperature, showing that this can be obtained from Wien’s model of the energy density (<a href="#eq-wien-en-density-freq">Equation&nbsp;<span>1.5</span></a> or <a href="#eq-wien-en-density-wavel">Equation&nbsp;<span>1.4</span></a>).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It may be useful to do a change of variables.</p>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Solution - Wien’s displacement law derivation
+</summary>
+<p>Starting from the energy density in <a href="#eq-wien-en-density-freq">Equation&nbsp;<span>1.5</span></a>, the peak can be found by imposing <span class="math inline">\(\frac{\mathrm{d} u}{\mathrm{d} \nu}=0\)</span> (the procedure is equivalent if we consider <a href="#eq-wien-en-density-wavel">Equation&nbsp;<span>1.4</span></a> and we derive it with respect to the wavelength instead).</p>
+<p>Defining <span class="math inline">\(x=\nu/T\)</span>, we obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\mathrm{d} u}{\mathrm{d} \nu}&amp;=\frac{\mathrm{d} \nu^3 g(x)}{\mathrm{d} \nu}\\
+&amp;=3\nu^2 g(x)+\nu^3 \frac{\mathrm{d}g(x)}{\mathrm{d}x}\frac{\mathrm{d}x}{\mathrm{d}\nu}\\
+&amp;=3\nu^2 g(x)+\frac{\nu^3}{T}\frac{\mathrm{d}g(x)}{\mathrm{d}x}\\
+&amp;=\nu^2\left(3 g(x)+\frac{\nu}{T}\frac{\mathrm{d}g(x)}{\mathrm{d}x}\right)=0.
+\end{aligned}
+\]</span></p>
+<p>Note that we obtained <span class="math display">\[
+3 g(x)+x\frac{\mathrm{d}g(x)}{\mathrm{d}x}=0,
+\]</span></p>
+<p>which depends only on <span class="math inline">\(x\)</span> and not <span class="math inline">\(\nu\)</span> or <span class="math inline">\(T\)</span> individually. This simplifies things, as it means that the peak itself is going to be a function of this ratio <span class="math inline">\(\nu/T\)</span> only (we do not need to solve it explicitly, so do not need to know the form of <span class="math inline">\(g(x)\)</span>.)</p>
+<p><span class="math display">\[
+\begin{aligned}
+    x\Big|_{\text{peak}} \equiv \frac{\nu}{T}\Big|_{\text{peak}} = \text{const}
+    \implies  \nu \propto T
+    \implies  \lambda_{max} \propto 1/T
+\end{aligned}
+\]</span></p>
+<p>We cannot determine the constant <span class="math inline">\(b\)</span> of <a href="#eq-wiens-displacement-law">Equation&nbsp;<span>1.7</span></a>, but we can derive the relation between the wavelength at the peak and the temperature of the black body.</p>
+</details>
+</section>
+</section>
+<section id="rayleigh-jeans-model-1900" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="rayleigh-jeans-model-1900"><span class="header-section-number">1.2.3</span> Rayleigh-Jeans model (1900)</h3>
+<p>Lord Rayleigh used classical physics to predict the shape of the black body spectrum, which was later refined by Sir James Jeans. The explanation is based on electromagnetic theory and standing waves (more details about the derivation are given in the subsection below).</p>
+<p>The Rayleigh-Jeans law in <a href="#eq-rayleigh-jeans-law">Equation&nbsp;<span>1.8</span></a> is a good approximation to the <em>observed</em> spectrum at long wavelength (low frequencies) <span class="math inline">\(hc\ll k_BT\lambda\)</span>, giving the following spectral radiance, plotted in <a href="#fig-rayleigh-jeans-plot">Figure&nbsp;<span>1.6</span></a>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rayleigh-Jeans law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-rayleigh-jeans-law"><span class="math display">\[
+R_\lambda^\mathrm{RJ}(\lambda; T) = \frac{2ck_B T}{\lambda^4}
+\tag{1.8}\]</span></span></p>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/strutt.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Lord Rayleigh (1842 - 1918)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/James_Hopwood_Jeans.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Sir James Jeans (1877 - 1946)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> warnings</span>
+<span id="cb2-2"><a href="#cb2-2"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="im">from</span> astropy.constants <span class="im">import</span> k_B, c, h</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="im">from</span> matplotlib <span class="im">import</span> rc</span>
+<span id="cb2-7"><a href="#cb2-7"></a>rc(<span class="st">'text'</span>,usetex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>rc(<span class="st">'font'</span>,size<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>rc(<span class="st">'figure'</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a>l <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3000</span>,<span class="dv">1000</span>) <span class="co"># Wavelength, nm</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>T <span class="op">=</span> <span class="dv">4000</span> <span class="co"># Temperature, Kelvin</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>T2 <span class="op">=</span> <span class="dv">3000</span> <span class="co"># Temperature, Kelvin</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>B_rj<span class="op">=</span>c.value<span class="op">*</span> <span class="dv">2</span><span class="op">*</span>k_B.value <span class="op">*</span> T <span class="op">/</span>(l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">**</span><span class="dv">4</span><span class="op">;</span> <span class="co"># 1e-9 to convert from nm to meters</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>B_rj2<span class="op">=</span>c.value<span class="op">*</span> <span class="dv">2</span><span class="op">*</span>k_B.value <span class="op">*</span> T2 <span class="op">/</span>(l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">**</span><span class="dv">4</span><span class="op">;</span> <span class="co"># 1e-9 to convert from nm to meters</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a>plt.plot(l, B_rj, label<span class="op">=</span><span class="st">"Rayleigh-Jeans law, T=4000K"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19"></a>plt.plot(l, B_rj2, label<span class="op">=</span><span class="st">"Rayleigh-Jeans law, T=3000K"</span>)</span>
+<span id="cb2-20"><a href="#cb2-20"></a>plt.xlabel(<span class="vs">r'Wavelength $\lambda$ (nm)'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a>plt.ylabel(<span class="vs">r'Spectral Radiance $R(\lambda, T)$ (Wm$^{-3}$sr$^{-1}$)'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22"></a>plt.title(<span class="st">'Spectral radiance'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23"></a>plt.ylim([<span class="dv">0</span>,<span class="fl">5e14</span>])</span>
+<span id="cb2-24"><a href="#cb2-24"></a>plt.grid()</span>
+<span id="cb2-25"><a href="#cb2-25"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-rayleigh-jeans-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="p3qm-1_files/figure-html/fig-rayleigh-jeans-plot-output-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.6: Spectral radiance plotted using the Rayleigh-Jeans law (<a href="#eq-rayleigh-jeans-law">Equation&nbsp;<span>1.8</span></a>), for T=4000K and T=3000K.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The Rayleigh-Jeans law has a big problem: the radiance keeps increasing indefinitely at short wavelengths (higher frequencies) - see <a href="#fig-rayleigh-jeans-plot">Figure&nbsp;<span>1.6</span></a>. If it were true, the power emitted at short wavelengths would be infinite! This is known as the <strong>ultraviolet catastrophe</strong>, and indicates the failure of classical physics to explain the behaviour of thermal radiation.</p>
+</section>
+<section id="sec-RJ-derivation" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="sec-RJ-derivation"><span class="header-section-number">1.2.4</span> Derivation of the Rayleigh-Jeans law</h3>
+<p>The derivation can be found in <span class="citation" data-cites="richtmyer1969introduction">(<a href="#ref-richtmyer1969introduction" role="doc-biblioref">Richtmyer, Kennard, and Cooper 1969</a>)</span> and follows principles from electromagnetism.</p>
+<p>Imagine to have a 3D cubic cavity with side-length <span class="math inline">\(L\)</span>. Inside the cavity we would expect to have standing waves (as in <a href="#fig-cavity-standing-waves">Figure&nbsp;<span>1.7</span></a>), and the amount of radiation that the cavity can emit at a certain frequency is proportional to the number of modes it allows in that range. We are interested in the following three questions:</p>
+<ol type="1">
+<li>How many modes are there, per unit frequency, per unit volume, in the cavity?</li>
+<li>How much energy is needed to excite each mode, and how is the energy density distributed?</li>
+</ol>
+<p><strong>1. Determining the number of modes in the cavity</strong></p>
+<p>To answer question 1, we proceed per steps:</p>
+<ul>
+<li><p>Consider the cavity and impose periodic boundary conditions (we must have zero amplitude at the walls): then the allowed modes have the form <span class="math inline">\(\prod_i \sin(k_i x_i)\)</span>, with <span class="math inline">\(k_i = n_i\pi L\)</span>, for integer <span class="math inline">\(n_i\)</span>. Extending to each direction: <span id="eq-nmodes-L"><span class="math display">\[
+|\mathbf{n}|^2 = n_x^2 + n_y^2 + n_z^2 = (2\nu L/c)^2 = (2 L/\lambda)^2.
+\tag{1.9}\]</span></span></p></li>
+<li><p>How do we find the total number of modes that satisfy this condition? We would need to count all the combinations of the integer values <span class="math inline">\(n_i\)</span>, but we can use a trick, which consists in assuming that the number of combinations is the volume of something that we call and “n-space”: a 3D grid containing the values of <span class="math inline">\(n_i\)</span> in each direction (<a href="#fig-nspace">Figure&nbsp;<span>1.8</span></a>).</p></li>
+</ul>
+<p>We consider the n-space as a sphere: to find the number of modes we need to find its volume (this is a good approximation since the cavity length is much larger than the wavelength), <em>but</em> we need to consider only the positive quadrant (1/8 of the volume of the sphere), <em>and</em> we can have waves polarized along two planes (multiply the volume by 2 to account for two polarizations). With all this in mind, the volume of the n-space (positive) sphere with two possible polarizations is:</p>
+<p><span class="math display">\[\begin{align}
+\mathrm{d}N(|\mathbf{n}|) &amp;= \frac{1}{8}\times 2 \times \frac{4 \pi}{3}(|\mathbf{n}|^2)^{3/2}\mathrm{d}|\mathbf{n}|\\
+&amp;= \frac{\pi}{3}(|\mathbf{n}|^2)^{3/2}\mathrm{d}|\mathbf{n}|.
+\end{align}\]</span></p>
+<p>From this, using <a href="#eq-nmodes-L">Equation&nbsp;<span>1.9</span></a>, we find that the <em>number of modes per volume</em> (in terms of the wavelength or the frequency) is <span id="eq-nmodes-vol"><span class="math display">\[
+\mathrm{d}N(\lambda) = \frac{8\pi L^3}{3\lambda^3}\mathrm{d}\lambda, \quad \mathrm{d}N(\nu)= \frac{8\pi \nu^3 L^3}{3c^3}\mathrm{d}\nu
+\tag{1.10}\]</span></span></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cavity-standing-waves" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/bb1b.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.7: Standing waves in a cavity.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-nspace" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/nspace.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.8: Rayleigh scheme used for counting modes. Credits: <span class="citation" data-cites="richtmyer1969introduction">(<a href="#ref-richtmyer1969introduction" role="doc-biblioref">Richtmyer, Kennard, and Cooper 1969</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>We now want to find the <em>number of modes per volume, per unit frequency (or wavelength)</em>, so we divide by <span class="math inline">\(L^3\)</span> and differentiate with respect to <span class="math inline">\(\nu\)</span> (or <span class="math inline">\(\lambda\)</span>), obtaining respectively: <span id="eq-nmodes-pervol-unitfreq"><span class="math display">\[
+\left|\frac{\mathrm{d}N(\nu)}{d\nu}\frac{1}{L^3}\right|=\frac{8\pi \nu^2}{c^3}
+\tag{1.11}\]</span></span> <span id="eq-nmodes-pervol-unitwavel"><span class="math display">\[
+\left|\frac{\mathrm{d}N(\lambda)}{d\lambda}\frac{1}{L^3}\right|=\frac{8\pi}{\lambda^4}.
+\tag{1.12}\]</span></span> Note that <span class="math inline">\(\frac{\mathrm{d}N}{d\nu}\)</span> gives a negative result because the number of modes decreases with increasing wavelength.</li>
+</ul>
+<p>These results hold general validity in both classical and quantum physics, but we did not address the second and third questions yet to determine the probability of occupying the modes and their corresponding energy. This is where classical and quantum physics start diverging, and this is where this difference becomes important. The Rayleigh-Jeans model uses a classical physics approach in addressing the above questions.</p>
+<ol start="2" type="1">
+<li><strong>Determining the energy associated to the modes</strong></li>
+</ol>
+<p>To find the energy associated to the modes we need to first ask: what is the probability that the modes are occupied? Based on classical physics all the modes have the <em>same probability</em> of being occupied, i.e.&nbsp;all modes have the same chance of being produced and their number increases according to <a href="#eq-nmodes-pervol-unitfreq">Equation&nbsp;<span>1.11</span></a> and <a href="#eq-nmodes-pervol-unitwavel">Equation&nbsp;<span>1.12</span></a>.</p>
+<p>According to classical (statistical thermal) physics, the principle of <em>equipartition of energy</em> states that, for a body in theraml equilibrium at temperature <span class="math inline">\(T\)</span>, the energy associated to each degree of freedom is <span class="math inline">\(1/2 k_B T\)</span>. So the energy needed to excite each mode (accounting for two polarizations) is <span class="math inline">\(\bar{E}=\frac{1}{2}\times 2 k_B T = k_B T\)</span>, and this <em>does not depend on the frequency</em>.</p>
+<p>What’s the result for the energy density, if we put these things together? <span id="eq-en-density-rj"><span class="math display">\[
+u(\nu,T)=\frac{8\pi\nu^2}{c^3} k_B T.
+\tag{1.13}\]</span></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this means that the function <span class="math inline">\(g(x)\)</span> introduced in <a href="#eq-wien-en-density-freq">Equation&nbsp;<span>1.5</span></a> is then <span class="math inline">\(g(\nu/T)=\frac{k_B T}{\nu}=\frac{1}{x}\)</span>.</p>
+<p>If we integrate <a href="#eq-en-density-rj">Equation&nbsp;<span>1.13</span></a> over all the frequencies to find the total energy, <span class="math display">\[
+E_{tot} = \int_0^{\infty} u(\nu,T) d\nu = \infty
+\]</span></p>
+<p>we obtain <em>infinite energy</em> (not physically possible) - this is the <strong>ultraviolet catastrophe</strong>.</p>
+</div>
+</div>
+</section>
+<section id="plancks-law-1900" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="plancks-law-1900"><span class="header-section-number">1.2.5</span> Planck’s Law (1900)</h3>
+<p>We saw that Wien’s approximation was good at low wavelengths (high frequencies), while the Rayleigh-Jeans law works better in the opposite regime of high wavelengths (low frequencies).</p>
+<p>In 1900 Planck was able to derive a spectrum that fits the observed data of the blackbody spectral emission by assuming that energy comes in discrete quanta of energy <span id="eq-plancks-energy"><span class="math display">\[
+E = h\nu = hc/\lambda,
+\tag{1.14}\]</span></span></p>
+<p>with <span class="math inline">\(h=6.626\times 10^{−34} \mathrm{J}\cdot\mathrm{Hz}^{−1} = 4.136\times 10^{−15} \mathrm{eV}\cdot \mathrm{Hz}^{−1}\)</span> being Planck constant.</p>
+<p><em>This marked the birth of quantum physics!</em> And believe it or not, Planck’s idea started from a lightbulb (see <a href="https://www.youtube.com/watch?v=i1TVZIBj7UA">video</a> below).</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/i1TVZIBj7UA" title="Planck and the birth of quantum mechanics." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>The Planck radiation spectrum for a black body’s spectral radiance is:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Planck’s law for the spectral emittance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-planck-law"><span class="math display">\[
+R_\lambda(\lambda; T) = \frac{2 hc^2}{\lambda^5}\left(\frac{1}{\exp\left(\frac{hc}{\lambda k_B T}\right) -1} \right)
+\tag{1.15}\]</span></span></p>
+</div>
+</div>
+<p>The Wien’s approximation, the Rayleigh-Jeans law and Planck’s law are compared as a function of wavelength in <a href="#fig-rayleigh-wien-planck-plot-wavel">Figure&nbsp;<span>1.9</span></a> and as a function of frequency in <a href="#fig-rayleigh-wien-planck-plot-freq">Figure&nbsp;<span>1.10</span></a>.</p>
+<div class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>B_planck <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>h.value<span class="op">*</span>c.value<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> (<span class="fl">1.0</span><span class="op">/</span>(np.exp(h.value<span class="op">*</span>c.value<span class="op">/</span>(k_B.value<span class="op">*</span>T<span class="op">*</span>(l<span class="op">*</span><span class="fl">1e-9</span>)))<span class="op">-</span><span class="dv">1</span>)) <span class="op">/</span> (l<span class="op">*</span><span class="fl">1e-9</span>)<span class="op">**</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>plt.plot(l, B_planck, label<span class="op">=</span><span class="st">"Planck's law"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>plt.plot(l, B_wien, label<span class="op">=</span><span class="st">"Wien's approximation"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>plt.plot(l, B_rj, label<span class="op">=</span><span class="st">"Rayleigh-Jeans law"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>plt.xlabel(<span class="vs">r'Wavelength $\lambda$ (nm)'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>plt.ylabel(<span class="vs">r'Spectral Radiance $B_\lambda(\lambda, T=4000K)$ (Wm$^{-3}$sr$^{-1}$)'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>plt.title(<span class="st">'Spectral radiance'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a>plt.ylim([<span class="dv">0</span>,<span class="fl">5e12</span>])</span>
+<span id="cb3-10"><a href="#cb3-10"></a>plt.grid()</span>
+<span id="cb3-11"><a href="#cb3-11"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-rayleigh-wien-planck-plot-wavel" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="p3qm-1_files/figure-html/fig-rayleigh-wien-planck-plot-wavel-output-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.9: Comparison of the spectral radiance plotted using the Rayleigh-Jeans law (<a href="#eq-rayleigh-jeans-law">Equation&nbsp;<span>1.8</span></a>), Wien’s approximation (<a href="#eq-Wien_approx">Equation&nbsp;<span>1.6</span></a>) and Planck’s law (<a href="#eq-planck-law">Equation&nbsp;<span>1.15</span></a>) for T=4000K.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-rayleigh-wien-planck-plot-freq" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Mplwp_blackbody_nu_planck-wien-rj_5800K.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.10: Comparison of the spectral radiance plotted using the Rayleigh-Jeans law (<a href="#eq-rayleigh-jeans-law">Equation&nbsp;<span>1.8</span></a>), Wien’s approximation (<a href="#eq-Wien_approx">Equation&nbsp;<span>1.6</span></a>) and Planck’s law (<a href="#eq-planck-law">Equation&nbsp;<span>1.15</span></a>), as a function of frequency, for T=5800K.</figcaption>
+</figure>
+</div>
+<p><strong>Interlude: Max Planck (1858-1947)</strong></p>
+<p>Personal life:</p>
+<ul>
+<li>Music prodigy on piano, organ and cello, but chose physics. Later played regularly with Einstein in Berlin.</li>
+<li>Advised against physics: “Almost everything already discovered, and all that remains is to fill a few holes” – Planck “did not wish to discover new things” (!)</li>
+<li>Academic career in Germany, ended up as theoretical physics prof in Berlin, specialising in thermodynamics &amp; entropy</li>
+<li>Planck was patriotic and remained in Germany during the Nazi era, despite opposing some government policies, especially the persecution of Jews.</li>
+<li>His home was destroyed by bombing near the end of World War II, leading to significant hardship</li>
+<li>He was married twice, first to Marie Merck, and after her death, to her cousin, Marga von Hösslin.</li>
+<li>He faced personal tragedy, losing three of his children, including one son, Erwin, who was executed by the Gestapo for unsuccessfully attempting to assassinate Hitler in 1944.</li>
+</ul>
+<p>Physics considerations and contributions:</p>
+<ul>
+<li>Grand figure of German physics, Nobel Prize, father of DPG and Solvay conferences. He resisted Nazi takeover of DPG and helped Jewish physicists. Died shortly after his son Erwin was executed.</li>
+<li>Rayleigh and Jeans kept setting <span class="math inline">\(h\rightarrow 0\)</span>: “I amunable to understand Jeans’ stubbornness – he is an example of a theoretician as should never be existing. So much the worse for the facts if they don’t fit.”</li>
+</ul>
+<section id="derivation-of-the-plancks-model" class="level4" data-number="1.2.5.1">
+<h4 data-number="1.2.5.1" class="anchored" data-anchor-id="derivation-of-the-plancks-model"><span class="header-section-number">1.2.5.1</span> Derivation of the Planck’s model</h4>
+<p>What are the ‘classical’ assumptions of the Rayleigh-Jeans model that were dropped by Planck?</p>
+<p>In the previous section on the derivation of the Rayleigh-Jeans law we determined the number of modes and the energy associated to those. The number of modes counting was correct, but the mistake is in assuming that the equipartition of energy leads to each mode having an energy of <span class="math inline">\(k_B T\)</span>, and that exciting each of these modes is equally probable.</p>
+<p>According to the classical theory, the average energy per mode can be obtained starting from the <strong>Maxwell-Boltzmann distribution</strong> <span id="eq-mw-distribution"><span class="math display">\[
+p(E)=e^{-E/k_B T},
+\tag{1.16}\]</span></span> and using the classical <em>equipartition of energy</em>: <span id="eq-avg-en-continuum"><span class="math display">\[
+\langle E\rangle=\frac{\int E p(E) \mathrm{d}E}{\int p(E) \mathrm{d}E} = \frac{k_B^2 T^2}{k_B T} = k_B T
+\tag{1.17}\]</span></span></p>
+<p>This result is the one we previously determined in <a href="#sec-RJ-derivation"><span>Section&nbsp;1.2.4</span></a>, however the integration relies in a continuum distribution of energies.</p>
+<p>Planck however used the discretisation of the energy levels to derive (in 2 months!) the correct form of the spectral radiance.</p>
+<p>Using discretisation of the energy <span class="math inline">\(E\)</span> into discrete energy steps <span class="math inline">\(\epsilon=h\nu\)</span>, from <a href="#eq-avg-en-continuum">Equation&nbsp;<span>1.17</span></a> we obtain <span id="eq-avg-en-discrete"><span class="math display">\[
+\langle E\rangle=\frac{\sum_{n=0}^{\infty}n\epsilon e^{-n\epsilon/k_B T}}{\sum_{n=0}^{\infty} e^{-n\epsilon/k_B T}} = \frac{\epsilon}{e^{\epsilon/k_B T}-1}.
+\tag{1.18}\]</span></span></p>
+</section>
+</section>
+<section id="exercise" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="exercise"><span class="header-section-number">1.2.6</span> <span style="color:#336699;">Exercise</span></h3>
+<p>Demonstrate the result of <a href="#eq-avg-en-discrete">Equation&nbsp;<span>1.18</span></a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can use the result of the geometric series <span class="math inline">\(\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}\)</span> and its consequence <span class="math inline">\(\sum_{n=0}^{\infty}(n+1)x^n=\frac{1}{(1-x)^2}\)</span>.</p>
+</div>
+</div>
+</div>
+<!-- <details>
+<summary>Solution</summary>
+ 
+Starting with the LHS of @eq-avg-en-discrete, substitute $x=e^{-h\nu/k_B T}$:
+
+$$
+\begin{aligned}
+\langle E\rangle&=h\nu\frac{\sum_{n=0}^{\infty}nx^n}\sum_{n=0}^{\infty}x^n\\
+&=h\nu x\frac{\sum_{n=0}^{\infty}(n+1)x^n}\sum_{n=0}^{\infty}x^n.
+\end{align}
+Using the properties in the hint:
+\begin{align}
+\langle E\rangle&=\frac{h\nu x}{1-x}\\
+&=\frac{h\nu}{x^{-1}-1}\\
+&=\frac{h\nu}{e^{h\nu/k_B T}-1}.
+\end{aligned}
+$$
+
+</details> -->
+<section id="consequences-of-plancks-model-and-comparison-to-the-rayleigh-jeans-model" class="level4" data-number="1.2.6.1">
+<h4 data-number="1.2.6.1" class="anchored" data-anchor-id="consequences-of-plancks-model-and-comparison-to-the-rayleigh-jeans-model"><span class="header-section-number">1.2.6.1</span> Consequences of Planck’s model and comparison to the Rayleigh-Jeans model</h4>
+<p>Planck’s introduction of discrete quanta of energy therefore affected the probability of occupation of the modes and their energy, as follows:</p>
+<ul>
+<li>In classical physics the occupation of each mode was <em>equally possible</em>, but since modes are quantised and each quanta has energy <span class="math inline">\(E=h\nu\)</span>, exciting <em>higher modes is less probable</em> because it requires more energy. The probability that a mode will be occupied is given by the <strong>Bose-Einstein distribution</strong> function: <span id="eq-be-distribution"><span class="math display">\[
+p_{\nu}=\frac{1}{e^{h\nu/k_B T}-1}
+\tag{1.19}\]</span></span></li>
+</ul>
+<p>Note that this distribution was introduced only in 1924; Planck’s law can be re-derived using this from quantum statistics arguments.</p>
+<ul>
+<li>The classical theory stated that each mode needed equal energy of <span class="math inline">\(k_B T\)</span> to be excited, in accordance with the <em>equipartition of energy</em>. However, the average energy per “mode” (or “quantum”) is given by its energy (<span class="math inline">\(h\nu\)</span>) times the probability that this will be occupied (the Bose-Einstein distribution function of <a href="#eq-be-distribution">Equation&nbsp;<span>1.19</span></a>): <span id="eq-avg-en-quanta"><span class="math display">\[
+\langle E\rangle=\frac{h\nu}{e^{h\nu/k_B T}-1},
+\tag{1.20}\]</span></span> which is now <em>dependent on the frequency</em>.</li>
+</ul>
+<p>The energy density is then given by the number of modes, per unit volume, per unit frequency (<a href="#eq-nmodes-pervol-unitfreq">Equation&nbsp;<span>1.11</span></a>), times the average energy per mode of <a href="#eq-avg-en-quanta">Equation&nbsp;<span>1.20</span></a>:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Planck spectral distribution law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-en-density-planck"><span class="math display">\[
+u(\nu,T)=\frac{8\pi\nu^2}{c^3}k_B T \left(\frac{h\nu/k_B T}{e^{h\nu/k_B T}-1}\right) = \frac{8\pi h}{c^3}k_B T \left(\frac{\nu^3}{e^{h\nu/k_B T}-1}\right).
+\tag{1.21}\]</span></span></p>
+</div>
+</div>
+</section>
+<section id="understanding-the-plancks-distribution" class="level4" data-number="1.2.6.2">
+<h4 data-number="1.2.6.2" class="anchored" data-anchor-id="understanding-the-plancks-distribution"><span class="header-section-number">1.2.6.2</span> Understanding the Planck’s distribution</h4>
+<div id="fig-planck-distr-steps" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/planck_function.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.11: Planck’s distribution, with explicit discretisation (grey steps). The energy step is <span class="math inline">\(\Delta\epsilon=h\nu\)</span>.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Compare <a href="#eq-en-density-planck">Equation&nbsp;<span>1.21</span></a> with <a href="#eq-en-density-rj">Equation&nbsp;<span>1.13</span></a>: you can see that the term related to equipartition energy has now a modification factor which reduces to the mode-counting form at low <span class="math inline">\(\nu\)</span> and returns Wien’s approximation at high <span class="math inline">\(\nu\)</span> (demonstrate it in the problems below).</li>
+<li>Note that the <span class="math inline">\(n=0\)</span> mode does not contribute to the value of <span class="math inline">\(\langle E\rangle\)</span> in <a href="#eq-avg-en-discrete">Equation&nbsp;<span>1.18</span></a>, while in the smooth equipartition integrap in is a dominant term: this is why the growth of energy density at high frequencies is suppressed!</li>
+<li>The first non-zero contribution starts at <span class="math inline">\(E=\epsilon=h\nu\)</span>, which incrases with frequency.</li>
+<li>For small <span class="math inline">\(h\nu/k_BT\)</span> (upper plot of <a href="#fig-planck-distr-steps">Figure&nbsp;<span>1.11</span></a>), the discrete steps are small enough that the distribution is pseudo-continuous: recover classical Rayleigh–Jeans form (show it in the problems below).</li>
+<li>At large <span class="math inline">\(h\nu/k_BT\)</span>, the first non-zero mode is highly Boltzmann-suppressed: finite energy in the cavity <span class="math inline">\(\rightarrow\)</span> <em>solves the ultraviolet catastrophe!</em></li>
+<li>But… is the energy fundamentally quantized, or just emitted that way?</li>
+</ul>
+</section>
+</section>
+<section id="exercise-1" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">1.2.7</span> <span style="color:#336699;">Exercise</span></h3>
+<ol type="1">
+<li>Show that for low frequencies (<span class="math inline">\(hc \ll \lambda k_B T\)</span>) the Rayleigh-Jeans law can be derived from the Planck law.</li>
+<li>Show that for high frequencies (<span class="math inline">\(hc \gg \lambda k_B T\)</span>) Wien’s law can be derived from the Planck law.</li>
+<li>Show that Stefan’s law can be found by integrating <a href="#eq-planck-law">Equation&nbsp;<span>1.15</span></a></li>
+<li>Find Wien’s displacement law (and the Wien’s displacement constant) using the Planck law.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can use the approximation <span class="math inline">\(\lim_{x\rightarrow 0} \exp(x) = 1 + x\)</span></p>
+</div>
+</div>
+</div>
+<!-- ### Consequences for oscillators -->
+</section>
+<section id="blackbody-radiation-and-the-cosmic-microwave-background" class="level3" data-number="1.2.8">
+<h3 data-number="1.2.8" class="anchored" data-anchor-id="blackbody-radiation-and-the-cosmic-microwave-background"><span class="header-section-number">1.2.8</span> Blackbody radiation and the cosmic microwave background</h3>
+<p>The cosmic microwave background (CMB) is the aftermath of the Big Bang cosmological model, discovered by accident in 1964 by Penzias and Wilson. Using a radio telescope, they detected an isotropic radio ‘noise’ incident on Earth from all directions with the same intensity and filling the universe uniformly. The intensity was then measured at other wavelengths and the spectral distribution was observed to be consistent with a near-perfect <span class="math inline">\(2.7\)</span> K with <span class="math inline">\(\sigma(T) \sim 20 \mu K\)</span> and a peak of emission in the microwave region (see <a href="#fig-cmb-spectra">Figure&nbsp;<span>1.12</span></a>).</p>
+<div id="fig-cmb-spectra" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/bkg3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.12: Based on their temperatures, different bodies emit at different ranges of frequency. The cosmic microwave background emits in the far infrared/microwave with a Wien’s peak in the microwave.</figcaption>
+</figure>
+</div>
+<p>Research conducted with the Far Infrared Absolute Spectrophotometer (FIRAS) on the COBE satellite measured a temperature of <span class="math inline">\(2.725 \pm 0.002\)</span> K. Earlier experiments had detected some anisotropy in the background radiation due to the motion of the solar system, but COBE’s data revealed fluctuations in the radiation (<a href="#fig-cmb">Figure&nbsp;<span>1.13</span></a>).</p>
+<p>Later, the WMAP mission produced a higher-resolution map of these anisotropies in the cosmic background radiation. The Planck satellite has since further refined this mapping, offering the most precise measurements of the key cosmological parameters to date.</p>
+<div id="fig-cmb" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/cmb.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.13: Cosmic microwave background, showing the fluctuations around the average temperature of 2.74K.</figcaption>
+</figure>
+</div>
+<p><strong>Why do we observe these temperature fluctuations?</strong> At the very beginning, during the Big Bang, the Universe experienced an extremely rapid period of inflation that lasted only a tiny fraction of a second—around <span class="math inline">\(10^{-32}\)</span> s. By the end of this inflationary phase, the Universe had expanded by a staggering factor of about <span class="math inline">\(10^{30}\)</span> (that’s <em>a lot</em>!).</p>
+<p>At the beginning of the inflation and expansion, random quantum fluctuations were present, what happened to those? They were stretched to enormous, cosmological scales during this process! As a result of these quantum fluctuations, the post-inflation universe now consist of vast regions with slightly different properties from one another, with certain areas having a slightly higher density of matter than others. Such fluctuations are therefore necessary in Big Bang cosmology to create the non-uniformities required for galaxy formation. Quantum fluctuations are thought to have seeded large-scale structure in the universe!</p>
+<p><strong>Ok, but how are the density fluctuations and the thermal fluctuations related?</strong></p>
+<p>Before the cosmic microwave background (CMB) was released, photons and particles were tightly linked, forming a unified ‘fluid’ of matter and radiation. At the time of recombination, around 380,000 years after the Big Bang, the two decoupled, allowing photons to travel freely across the Universe. These photons carried with them a record of how matter and radiation were distributed at that moment. Photons that came from denser regions lost more energy (since they needed to give away more energy to escape from a higher gravitational attraction), making them cooler, while those from less dense regions lost less energy and appeared warmer. As a result, the temperature fluctuations in the CMB reflect the density fluctuations in the early Universe, offering a ‘snapshot’ of its structure at the time of recombination.</p>
+<!-- [End of lecture 1 (?)] -->
+<p>Let’s now go back to discussing how quantum mechanics was discovered. The ultraviolet catastrophe was one of the pieces of the puzzle, but not the only thing that could not be explained without introducing the concept of quantisation of energy.</p>
+</section>
+</section>
+<section id="photoelectric-effect" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="photoelectric-effect"><span class="header-section-number">1.3</span> Photoelectric effect</h2>
+<p>The photoelectric effect was discovered by Heinrich Rudolf Hertz in 1887 during his work on radio waves. He observed that ultraviolet light affected the voltage at which sparking occurred between metal electrodes. Philipp Lenard clarified this in 1902, showing that light striking a metal surface releases electrically charged particles (later identified as electrons), discovered by J.J. Thomson in 1897. The photoelectric effect was then fully explained by Einstein in 1905, who got the Nobel prize for this (not for the relativistic theory!).</p>
+<p>To explain this, let’s introduce the setup: a vacuum chamber containing a metallic plate (it can be of different materials, e.g.&nbsp;sodium) hit by radiation at a certain wavelength and intensity, and a collector on the opposite side. Both sides are connected to a battery that can apply a voltage difference, and the collector is connected to an ammeter that measures the current of the charged particles hitting the collector. Use the following <a href="https://phet.colorado.edu/sims/cheerpj/photoelectric/latest/photoelectric.html?simulation=photoelectric">simulation</a> (embedded below in the html file) and note what you observe when varying the following quantities:</p>
+<ul>
+<li>Wavelength of incident light</li>
+<li>Intensity of the incident light</li>
+<li>Voltage of the battery</li>
+<li>The material of the metallic plate</li>
+</ul>
+<p>It is advisable to change only one parameter per time at first to better determine its effects. Show the relevant graphs on the simulator after varying the corresponding quantities indicated on the axis.</p>
+<iframe src="https://phet.colorado.edu/sims/cheerpj/photoelectric/latest/photoelectric.html?simulation=photoelectric" width="800" height="600">
+</iframe>
+<p>##&nbsp;What should we expect classically? Classically, if we treat light as a wave, we know that its energy depends on the intensity, and therefore on the amplitude of the EM wave. The expectation is therefore that the energy of an electron emitted does not depend on the frequency of the light, but on its intensity. Furthermore, classically there is no reason why electrons should not be emitted if enough energy (intensity) is sent to the metallic plate, this should not depend on the frequency. What do we observe instead? <!-- Classically: intensity $\sim$ EM wave amplitude $\rightarrow$ intensity dependence, no frequency dependence, low intensity time-lag: not seen!. --></p>
+<p>##&nbsp;What do we observe? <strong>Simulated experiment 1: changing the material and the wavelength</strong> Let’s start with sodium, setting the voltage to zero and the intensity to 50%, and let’s change the wavelength from higher to lower (from 850nm, in the IR, to the UV), what do we notice?</p>
+<ul>
+<li>Nothing happens until the wavelength reaches a certain threshold <span class="math inline">\(\sim 530\)</span> nm, where then electrons start being emitted by the metallic plate hit by the light</li>
+<li>Below the threshold frequency (above the threshold wavelength) we do not see emitted electrons even if we change the intensity</li>
+<li>If we change the material, the critical frequency changes</li>
+<li>The more we decrease the wavelength (increase the frequency) the faster the electrons move - this means they have more kinetic energy</li>
+</ul>
+<p><strong>Simulated experiment 2: changing the intensity and the voltage</strong> Let’s now fix a wavelength at which electrons are released and change first the intensity and then the voltage to see how the current is affected.</p>
+<ul>
+<li><p>Let’s start by setting a null voltage. We can see that the current increases with increasing intensity, and in fact we can observe that more electrons are released and all of them reach the collector at higher intensities.</p></li>
+<li><p><strong>Positive voltage</strong>: Let’s now ramp up the voltage to the maximum positive value: we see that now the electrons are moving faster because of the potential, and the system reaches a saturation current</p></li>
+<li><p><strong>Negative voltage</strong>: If the value of the voltage is then decreased until it becomes negative, however, we can see that increasingly higher proportions of electrons start travelling towards the collector but come back, as now the potential is opposed to the initial motion of the electrons. Since the intensity changes the number of electrons emitted and therefore the photocurrent, at a fixed negative voltage the photocurrent will decrease with decreasing intensity. However, <em>regardless of light intensity</em>, we can eventually reduce the photocurrent to 0 with a negative <strong>stopping voltage</strong> <span class="math inline">\(V_0\)</span> (see <a href="#fig-photocurrent_vs_v">Figure&nbsp;<span>1.14</span></a>). The stopping voltage decreases linearly with the light frequency, until it reaches 0: there is no photocurrent below a threshold frequency.</p></li>
+</ul>
+<div id="fig-photocurrent_vs_v" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Photoelectric_intensity_v0.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.14: Photocurrent vs the potential difference, for two different values of the intensity and the same frequency. The stopping potential here is indicated with <span class="math inline">\(\Delta V_s\)</span>. For positive values of the potential difference, the photocurrent saturates for both intensities, while for negative values the stopping potential is eventually reached, regardless of the intensity.</figcaption>
+</figure>
+</div>
+<p>##&nbsp;Why we need a quantum explanation Classical physics does not explain why no photocurrent is recorded above the threshold wavelength: it should depend on the amplitude and therefore on the intensity, according to classical waves physics.</p>
+<p>We need the quantisation of energy, as Einstein proposed, for this.</p>
+<ul>
+<li>Electrons are emitted when a work of at least the <em>binding energy</em> <span class="math inline">\(E_b\)</span> is paid to free them: this value depends on the material of the metallic plate. If we consider that the energy coming from light is quantised and follows Planck’s definition of quanta of energy <span class="math inline">\(E=h\nu\)</span>, then the minimum work <span class="math inline">\(W\)</span> that needs to be done to emit electrons is related to the kinetic energy of the electrons through the Einstein’s photoelectric equation: <span id="eq-photoel-eq"><span class="math display">\[
+E_b = h\nu - W,
+\tag{1.22}\]</span></span> and the minimum (threshold) frequency necessary to eject electrons is <span class="math inline">\(\nu_{th} = W/h\)</span>.</li>
+</ul>
+<p>The extra energy results in kinetic energy, which determines a maximum possible velocity (see <a href="#fig-photoel-slide">Figure&nbsp;<span>1.15</span></a>)</p>
+<div id="fig-photoel-slide" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/photoelectric_effect_slide.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.15: Some observations of the photoelectric effect. Electrons are ejected only below a certain wavelength, and the lower the wavelength, the higher is the kinetic energy (max velocity).</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>The intensity determines the number of photons present in the light sent to the metallic plate, so higher intensity means that more electron can be extracted, if the frequency is above the threshold, and the photocurrent increases</p></li>
+<li><p>The voltage can be tuned to increase the photocurrent by facilitating the motion of electrons incresing the voltage. A negative voltage can otherwise invert the motion of the electrons, and consequently reduce the photocurrent all the way to zero (see <a href="#fig-photocurrent-vs-v">Figure&nbsp;<span>1.16</span></a>).</p></li>
+</ul>
+<div id="fig-photocurrent-vs-v" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/photocurrent_vs_v.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.16: Photocurrent vs the voltage for different values of the intensity. For each intensity, increasing the voltage from 0 leads to an increase of intensity up to a plateau, where all the electrons emitted get to the collector. When the voltage is negative, the more it gets smaller, the less is the photocurrent.</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-nuclear-atom" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-nuclear-atom"><span class="header-section-number">1.4</span> The nuclear atom</h2>
+<p>The description of the structure of the atom has evolved according to the timeline in <a href="#fig-history-atom">Figure&nbsp;<span>1.17</span></a>.</p>
+<div id="fig-history-atom" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/History-of-the-Atom-2023.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.17: History of the structure of the atom.</figcaption>
+</figure>
+</div>
+<p><em>Where did quantum mechanics come into play in the structure of the atom?</em></p>
+<section id="the-classical-problems-with-rutherfords-model" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="the-classical-problems-with-rutherfords-model"><span class="header-section-number">1.4.1</span> The ‘classical’ problems with Rutherford’s model</h3>
+<p>Geiger, Marsden, and Rutherford experiments on <span class="math inline">\(\alpha\)</span>-particle scattering (1908–1913) revealed that most atomic mass and all positive charge is concentrated in a central nucleus. This marks the end of the “plum pudding” model… but there is a problem. According to classical physics, electrons in orbits (accelerating charges) should emit radiation and therefore lose energy and spiral in to the nucleus. What does prevent this from happening? Classical physics could not provide a valid reason.</p>
+</section>
+<section id="the-bohr-model" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="the-bohr-model"><span class="header-section-number">1.4.2</span> The Bohr model</h3>
+<p>Bohr (1913) solved this problem with a theory based mainly on classical mechanics, but with some new quantum ideas. Bohr’s postulates were:</p>
+<ol type="1">
+<li><p>Electrons move in <em>circular orbits</em> determined by Newton’s and Coulomb’s laws.</p></li>
+<li><p>These circular orbits are <em>quantised</em>: the electron can’t occupy <em>any</em> region around the nucleus in a continuous way, but only stable orbits, hence it can’t spiral into the center. Since the energy is constant with time, these are called <em>“stationary states”</em> (we’ll get back to this concept later).</p></li>
+<li><p>To go from one orbit to another, the electron must emit or absorb quanta of energy: this explained the discrete absorption and emission spectral lines!</p></li>
+</ol>
+<p>For example, a spectral line at frequency <span class="math inline">\(f\)</span> is emitted when the atom transitions from the orbit at energy <span class="math inline">\(E_i\)</span> to the orbit at energy <span class="math inline">\(E_f&gt;E_i\)</span>: $ hf = E_i - E_f$</p>
+<ol start="4" type="1">
+<li>The atomic angular momentum is quantized and the only orbits allowed are the ones for which the angular momentum is a multiple of <span class="math inline">\(\hbar=\frac{h}{2\pi}\)</span> (reduced Planck constant), i.e.&nbsp;<span class="math inline">\(L = mvr = n\hbar\)</span>. This idea came from the fact that the Planck constant <span class="math inline">\(h\)</span> has dimension of angular momentum.</li>
+</ol>
+<p>Starting from that, Bohr predicted what the angular momentum and allowed orbits should have been for outer electrons in atoms with large mass number, and observed consistency with classical electrodynamics predictions.</p>
+</section>
+<section id="bohrs-correspondence-principle" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="bohrs-correspondence-principle"><span class="header-section-number">1.4.3</span> Bohr’s correspondence principle</h3>
+<p><em>Why did the quantum and classical results agree in atoms with large mass number? And why is angular momentum quantized?</em></p>
+<p>Because in large systems classical physics is a good approximation of quantum physics! This is the <strong>correspondence principle</strong>, and we will encounter it again later in the course.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bohr’s correspondence principle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Predictions of quantum theory must correspond to the predictions of classical physics in the region of sizes where classical theory is “known to hold”.</p>
+<p>Quantum systems are usually described by quantum numbers <span class="math inline">\(n\)</span>, and the classical limit should be recovered from the quantum results, for <span class="math inline">\(n\to \infty\)</span>, i.e.</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} [\mathrm{quantum \, physics \, prediction} (n)] = [\mathrm{classical \, physics \, prediction}]
+\]</span></p>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-atom-transitions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Bohr-atom-electron-to-jump.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.18: Quantized electron orbitals. To move from one orbital to one at a lower energy, the electron must emit a photon of energy equal to the energy gap between the two orbitals. To move to a higher energy orbital, it must absorb a photon with the energy difference between the two orbitals.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-h-lines" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/h_atom_transitions.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.19: First three series of spectral lines of the Hydrogen atom.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="historical-remark-arthur-erich-haas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="historical-remark-arthur-erich-haas">Historical remark: Arthur Erich Haas</h3>
+<p>In reality, the first quantum atomic model with quantised orbitals was proposed by <strong>Arthur Erich Haas</strong> in <em>1910</em> <span class="citation" data-cites="haas1910">(<a href="#ref-haas1910" role="doc-biblioref">Haas 1910</a>)</span> (3 years before Bohr). Haas presented his work at a lecture in Austria held during carnival time, and his idea was at that time rejected and ridiculed. As Haas recalled: “When I lectured to the Chemical-Physical Society of Vienna … Lecher … referred to the presentation during open discussion as”a carnival joke”. Haas was in fact the first one to estimate the Bohr radius and to create a connection between atomic orbitals and Planck constant! It is unclear what changed a shift in the opinion and led to the acceptance of Bohr’s theory only three years later, but probably the times were not mature enough to accept quantum concepts more widely when Haas proposed his idea.</p>
+</section>
+<section id="comptons-scattering" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="comptons-scattering"><span class="header-section-number">1.4.4</span> Compton’s scattering</h3>
+<p>We saw that the Bohr’s model explained the emission and absorption spectral lines. What happens if electrons interact with light at high frequencies such as X-ray? In this case it is reasonable to consider the electrons <em>free</em>, since the binding energy of the atom is very small compared to the X-ray energy, so the interaction between the high-frequency radiation and the electron would result in scattering.</p>
+<p><strong>Classical expectation</strong>: when the EM wave is scattered off atoms, the wavelength of scattered radiation should be the same as the wavelength of the incident radiation. X-rays had been discovered in 1895 by W. K. Rontgen and were thought to be electromagnetic radiation of high frequency. Based on Thomson’s theory (Thomson’s scattering), the oscillating electric field of the incident radiation would make the electrons of the target atoms vibrate with the same frequency, and these would radiate electromagnetic waves at the same frequency.</p>
+<p>This is not what Compton observed though. In 1922 Compton studied inelastic scattering of X-rays from graphite, and found that, with increasing scattering angle, a second peak was appearing at longer wavelength compared to the one of the incident light (<a href="#fig-compton-experiment">Figure&nbsp;<span>1.20</span></a>). This change in wavelength between the peaks of the incoming beam and the scattered one is the <strong>Compton shift</strong> and was found to be <span id="eq-compton-shift"><span class="math display">\[
+\Delta \lambda = \lambda_f - \lambda_i = \frac{h}{m_e c}(1-\cos(\theta)),
+\tag{1.23}\]</span></span> where <span class="math inline">\(m_e\)</span> is the mass of the electron and <span class="math inline">\(\theta\)</span> is the scattering angle.</p>
+<p>The constant in <a href="#eq-compton-shift">Equation&nbsp;<span>1.23</span></a>, <span class="math inline">\(\dfrac{h}{m_e c}=2.4\times 10^{-12}\)</span> m is the <strong>Compton wavelength of the electron</strong>.</p>
+<div id="fig-compton-experiment" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Compdata.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.20: Compton scattering experiment: the secondary peak at longer wavelength starts appearing with increasing scattering angle.</figcaption>
+</figure>
+</div>
+<section id="derivation-of-the-compton-shift" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="derivation-of-the-compton-shift">Derivation of the Compton shift</h4>
+<p>Compton used both special relativity and the quantisation of light to derive a formula for the Compton shift. The derivation itself is quite straightforward as it only requires the application of <em>conservation of energy</em> and <em>conservation of momentum</em> for the collision of a photon with a stationary electron. The only difference with a pure classical physics approach is that we need to use the relativistic energy expression and the Planck formula.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Compton2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Compton scattering: a high energy photon collides with an electron at rest. The electron gains energy, so the scattered photon has a lower frequency.</figcaption>
+</figure>
+</div>
+<!-- ![Compton scattering: a high energy photon collides with an electron at rest. The electron gains energy, so the scattered photon has a lower frequency.](img/compton-scattering-diagram.jpg) -->
+<ul>
+<li>From <em>conservation of energy</em>: <span class="math display">\[
+h\nu_i + m_ec^2 = h\nu_f + \sqrt{p_e^2c^2+m_e^2c^2}
+\]</span></li>
+</ul>
+<p>Squaring this and rearranging the terms: <span id="eq-compton-en-cons"><span class="math display">\[
+(p_e c)^2 = (h\nu_i)^2 + (h\nu_f)^2 - 2h^2 \nu_i \nu_f +2 m_e c^2 (h\nu_i -h \nu_f)
+\tag{1.24}\]</span></span></p>
+<ul>
+<li>From <em>conservation of momentum</em>: <span class="math display">\[
+\vec{p}_i=\vec{p}_e+\vec{p}_f
+\]</span> Rearranging this and using the definition of the scalar product: <span class="math display">\[
+p_e^2 = (\vec{p}_i-\vec{p}_f)^2 = p_i^2 + p_f^2 -2 p_i p_f \cos(\theta).
+\]</span></li>
+</ul>
+<p>We can now multiply each side by <span class="math inline">\(c^2\)</span> and use the relativistic and Planck’s energies (<span class="math inline">\(pc=h\nu\)</span>):</p>
+<p><span class="math display">\[
+p_e^2 c^2 = p_i^2 c^2 + p_f^2 c^2 -2 c^2 p_i p_f \cos(\theta)
+\]</span> <span id="eq-compton-mom-cons"><span class="math display">\[
+(p_e c)^2 = (h\nu_i)^2 + (h\nu_f)^2 -2 h^2 \nu_i \nu_f  \cos(\theta).
+\tag{1.25}\]</span></span></p>
+<ul>
+<li>Equating <a href="#eq-compton-en-cons">Equation&nbsp;<span>1.24</span></a> and <a href="#eq-compton-mom-cons">Equation&nbsp;<span>1.25</span></a> and rearranging, we obtain <span class="math display">\[
+\frac{1}{h\nu_f}-\frac{1}{h\nu_i}=\frac{1}{m_e c^2}(1-\cos\theta),
+\]</span> which using <span class="math inline">\(\nu=c\lambda\)</span> gives the Compton shift of <a href="#eq-compton-shift">Equation&nbsp;<span>1.23</span></a>: <span class="math display">\[
+\Delta \lambda = \lambda_f - \lambda_i = \frac{h}{m_e c}(1-\cos(\theta)).
+\]</span></li>
+</ul>
+</section>
+</section>
+<section id="the-problems-with-bohrs-model" class="level3" data-number="1.4.5">
+<h3 data-number="1.4.5" class="anchored" data-anchor-id="the-problems-with-bohrs-model"><span class="header-section-number">1.4.5</span> The problems with Bohr’s model</h3>
+<p>In the years 1920s it was clear that Bohr theory still presented some unresolved problems:</p>
+<ul>
+<li>It failed to predict the observed intensities of spectral lines.</li>
+<li>Good for one-electron atoms, but very limiting for multi-electron atoms.</li>
+<li>It failed to provide an equation of motion governing the time development of atomic systems starting from some initial state.</li>
+<li>It overemphasized the particle nature of matter and could not really explain the origin of stationary states in the orbits or wave-particle duality.</li>
+<li>It did not supply a general scheme for “quantizing” other systems, especially those without periodic motion.</li>
+</ul>
+</section>
+</section>
+<section id="de-broglies-hypothesis-and-matter-waves" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="de-broglies-hypothesis-and-matter-waves"><span class="header-section-number">1.5</span> De Broglie’s hypothesis and matter waves</h2>
+<p>In 1923 Louis de Broglie (<a href="#fig-de-broglie">Figure&nbsp;<span>1.21</span></a>) introduced new ideas that answered some of the above open questions. In analogy with the light wave-particle duality, de Broglie suggested that, microscopically, matter may the same way, having both particle-like and wave-like properties. He suggested that this would for instance be the case for electrons: every electron was “accompained” by a (non electromagnetic!) wave, which “piloted” the electron through space.</p>
+<div id="fig-de-broglie" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Broglie_Big.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.21: Louis de Broglie, physicist and aristocrat.</figcaption>
+</figure>
+</div>
+<p>The wave-like and particle-like properties of light can be related by following equation for the momentum <span class="math inline">\(p\)</span> of the photon, $ p = k = h /c = h/$, where <span class="math inline">\(k=2\pi/\lambda\)</span> is the wavenumber and <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\lambda\)</span> are respectively the frequency and wavelength of the light wave.</p>
+<p>In analogy to this, de Broglie introduced the concept of wavelength associated to any object moving with a momentum <span class="math inline">\(p\)</span> - the de Broglie wavelength.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+De Broglie wavelength
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-de-broglie-wavel"><span class="math display">\[
+\lambda_{dB} = \frac{h}{p}.
+\tag{1.26}\]</span></span></p>
+</div>
+</div>
+<p>We can also use the form <span class="math inline">\(p=\hbar k\)</span>, using the de Broglie wavenumber <span class="math inline">\(k = 2\pi/\lambda_{dB}\)</span>.</p>
+<section id="interpretation-of-the-bohrs-circular-orbits" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="interpretation-of-the-bohrs-circular-orbits"><span class="header-section-number">1.5.1</span> Interpretation of the Bohr’s circular orbits</h3>
+<p>The idea of de Broglie gives a <em>qualitative</em> explanation of Bohr’s idea of quantized orbits, as the waves associated to the electrons would interfer, leaving areas of destructive interference where “electrons are forbidden”, while only standing waves would be allowed to “fit” in the Bohr’s circular orbits. These would be given by a discrete set of wavelengths that interfer constructively if an integral number of wavelengths fits exactly into the circumference of the orbit (see <a href="#fig-de-broglie-bohr">Figure&nbsp;<span>1.22</span></a>), i.e.</p>
+<p><span class="math display">\[
+n\lambda = 2\pi r,
+\]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the radius of the circular orbit.</p>
+<div id="fig-de-broglie-bohr" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/debroglie_bohr.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.22: Standing waves fit to a circular Bohr orbit if the circumference is an integer multiple of the electron’s de Broglie wavelength.</figcaption>
+</figure>
+</div>
+</section>
+<section id="exercise-2" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">1.5.2</span> <span style="color:#336699;">Exercise</span></h3>
+<p>Determine the de Broglie wavelength of a 54eV electron.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>What is the kinetic energy of the electron?</p>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<p>The kinetic energy of the electron is <span class="math inline">\(\frac{p^2}{2m} = E = 54eV\)</span>, therefore <span class="math inline">\(p=\sqrt{2mE}=1.67\times 10^{-10} m = 1.67\)</span> Å (remember to convert energies to Joules!). This is the typical scale of spacing between atoms in a solid.</p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">from</span> scipy.constants <span class="im">import</span> m_e, h</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>E_eV <span class="op">=</span> <span class="dv">54</span> <span class="co">#eV</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>E <span class="op">=</span> E_eV<span class="op">*</span><span class="fl">1.60218e-19</span> <span class="co">#J. Converted the energy to Joules here</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>m_e <span class="co">#kg</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>p <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m_e<span class="op">*</span>E) </span>
+<span id="cb4-8"><a href="#cb4-8"></a>lambdadB <span class="op">=</span> h<span class="op">/</span>p</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="bu">print</span>(<span class="ss">f'De Broglie wavelength = </span><span class="sc">{</span>lambdadB<span class="sc">:.2e}</span><span class="ss"> m'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>De Broglie wavelength = 1.67e-10 m</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="electron-diffraction-experiments" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="electron-diffraction-experiments"><span class="header-section-number">1.5.3</span> Electron diffraction experiments</h3>
+<p>Designing and conducting an experiment to confirm de Broglie’s hypothesis was not an easy task, why? The most straightforward thing to show that small entities like electrons can in fact behave like waves would be to try to observe wave-like behaviour through experiments already used in optics, for instance diffraction. But… how small should the distance between slits be in a diffraction experiment, to observe interference with such “electron waves”?</p>
+<p>Think about the number that we obtained in the previous exercise for the de Broglie wavelength, which sets the scale at which the electron would exhibit quantum wave-like properties. This is of the order of nm, which is the typical distance between atoms in a molecules. How can we design a diffraction grating with such small distances? Any macroscopic diffraction slit would be too big for this purpose. Well, the only way would be to use the molecules themsevels, using <strong>atomic lattices</strong>!</p>
+<p>In 1925, Davisson &amp; Germer were conducting electron scattering experiments to understand the disposition of atoms on a nickel surface, when they accidentally broke the vacuum in their experimental setup, and to get rid of the oxidation of the nickel surface they heated up the sample. Upon repeating the experiment, different results were found and electron Bragg scattering was accidentally measured! The reason was that the prolonged heating had changed the internal structure of the atoms in the nickel target, forming large single-crystal regions in the polycrystalline sample, which provided an ideal lattice to observe electron diffraction.</p>
+<p>From the diffraction equation, <span class="math inline">\(λ = 2d sin((π − θ)/2)\)</span> for Ni with <span class="math inline">\(d = 0.091\)</span> nm, the peak observed at <span class="math inline">\(θ = 50\deg\)</span> was consistent with the the Broglie wavelength of 54 eV electrons. At the same time and independently, George Thomson also observed electron diffraction with aluminium films, and in 1937 he shared the Nobel Prize with Davisson (not with Germer, who had a B plan for his career and became an offbeat rock climber - always think about a B plan…).</p>
+<p>Such experiments have since been extended to neutrons, atoms, molecules, fullerene (<span class="math inline">\(C_{60}\)</span>), etc.</p>
+</section>
+</section>
+<section id="schrödingers-atomic-model-a-really-quantum-model-of-the-atom" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="schrödingers-atomic-model-a-really-quantum-model-of-the-atom"><span class="header-section-number">1.6</span> (1926) Schrödinger’s atomic model: a <em>really</em> quantum model of the atom</h2>
+<p>You may wonder what I mean with “<em>really</em> quantum model of the atom”, when Bohr already introduced the quantisation of energy levels, even managing to explain the spectral lines and de Broglie introduced the concept of waves. We’ve been very vague about the physical meaning we give to such “pilot waves that guide the electrons through space”, but it seems that we have all the ingredients for a really quantum model of the atom. What else do we need?</p>
+<p>In the following chapter(s) we will see that the notion of representing a particle as a localized wave or wave group leads naturally to limitations on simultaneously measuring position and momentum of the particle (Heisenberg’s uncertainty principle).</p>
+<p>The reality is that the Bohr’s model, even with the de Broglie interpretation, still doesn’t capture the <em>probabilistic</em> nature of quantum physics. This is where we really start getting into the more fundamental differences in nature between classical and quantum physics.</p>
+<p><strong>What is different about quantum physics?</strong></p>
+<p>We talked about quantised light (photons) and quantised circular orbits for the atom, and we saw that we <em>need</em> to introduce these to explain phenomena that can’t be explained by using classical physics. However, the most striking difference between classical and quantum physics lies in their fundamental nature.</p>
+<p><strong>Classical physics</strong> is <strong><em>deterministic</em></strong>: given a system, if you have enough information about it (i.e.&nbsp;about the initial configuration of an experiment) and know the physics to describe its dynamics, you can <em>determine</em> what will happen next to said system, i.e.&nbsp;what configuration it’s going to be in after some time. An important aspect is that the process of observing (<em>measuring</em>) a classical system does not affect the final configuration of the system. We’ll get into more details about this later.</p>
+<p>Classically, an electron in Bohr’s model is still imagined as a particle orbiting about the nucleus. However, that’s not exactly the correct picture, as de Broglie pointed out. At such small scales, we have to abandon the classical description and resort to the quantum interpretation.</p>
+<p><strong>Quantum physics</strong>, in contrast to classical physics, is <strong><em>probabilistic</em></strong>. What does this mean for the electron? It means that actually the electron is not really a particle: just like light, it can behave like a wave and its description is given by a <em>wavefunction</em>, a probability distribution indicating the regions where the electron is more likely to be (observed after measurement) (<a href="#fig-cl-quant-el">Figure&nbsp;<span>1.23</span></a>). The region of space around the nucleus where there is a high probability of observing the electron (~90-95%) is called an <em>orbital</em>, while’forbidden’ regions around the nucleus are the <em>nodes</em> (<a href="#fig-quantum-el">Figure&nbsp;<span>1.24</span></a>).</p>
+<div id="fig-cl-quant-el" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./img/classical_quantum_el.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.23: Classical vs quantum electron visualization.</figcaption>
+</figure>
+</div>
+<div id="fig-quantum-el" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/quantum_electron_prob_distr.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.24: Probability distribution of electron for different orbitals (1s, 2s, 3s). More densely coloured regions indicate areas where electrons are more likely to be. White areas (nodes) are regions where electrons have zero probability of being found. Image credit: <a href="http://chemwiki.ucdavis.edu/?title=Textbook_Maps/General_Chemistry_Textbook_Maps/Map:_Brown,_LeMay,_%26_Bursten_%22Chemistry:_The_Central_Science%22/06._Electronic_Structure_of_Atoms/6.6:_Representation_of_Orbitals">UCDavis Chemwiki</a>, <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/">CC BY-NC-SA 3.0 US</a></figcaption>
+</figure>
+</div>
+<section id="electron-orbitals" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="electron-orbitals"><span class="header-section-number">1.6.1</span> Electron orbitals</h3>
+<p>Electron orbitals introduced by Schrödinger are characterised by quantum numbers. Schrödinger introduced the concept of electron orbitals and <em>quantum numbers</em> that describe them:</p>
+<ul>
+<li><p><strong>Principal Quantum Number</strong> (<span class="math inline">\(n\)</span>): Indicates the energy level and relative size of the orbital. It can take positive integer values (1, 2, 3, …).</p></li>
+<li><p><strong>Angular Momentum Quantum Number</strong> (<span class="math inline">\(l\)</span>): Defines the shape of the orbital and can take values from 0 to <span class="math inline">\(n-1\)</span> for each value of <span class="math inline">\(n\)</span>. Each value of l corresponds to a specific type of orbital (s, p, d, f…).</p></li>
+<li><p><strong>Magnetic Quantum Number</strong> (<span class="math inline">\(m_l\)</span>): Describes the orientation of the orbital in space and can take integer values from <span class="math inline">\(-l\)</span> to <span class="math inline">\(+l\)</span>, including <span class="math inline">\(0\)</span>.</p></li>
+<li><p><strong>Spin Quantum Number</strong>(<span class="math inline">\(m_s\)</span>): Specifies the electron’s spin direction, which can be either +1/2 or -1/2.</p></li>
+</ul>
+<p>We’ll get back to these quantum numbers later on, when we study more in detail the orbital angular momentum and spin.</p>
+<!-- The 'state' of any quantum system is in general defined by a wavefunction that describes the probability amplitude that upon observation the system will take a specific configuration.
+This means that it is intrinsically not possible to determine exactly what the exact configuration of a system is before observing that! -->
+<p>We are starting to introduce concepts that are very different (if not inexistent) in classical physics, such as:</p>
+<ul>
+<li><em>State</em></li>
+<li><em>Superposition</em></li>
+<li><em>Measurement</em> (its interpretation and implications in quantum physics)</li>
+<li>(and more…)</li>
+</ul>
+<!-- Don't worry, we will come back to explaining these more in detail in due time, and these are concepts that will accompain us during the whole course. -->
+<!-- A quantum system is by nature defined by a distribution of probabilities in which it can be found after an observation i.e. _measurements_, which _perturbs_ the system.
+What you observe after a measurement is one of the possible outcomes that a system in a _superposition_ of possible configurations had before. -->
+<p>These concepts will be discussed in greater detail during the course (they will in fact be our ‘bread and butter during’ the semester!) and we will come back to explaining them in due time. Now, let’s try to understand the probabilistic quantum nature with a known experiment: Young’s double slit experiment.</p>
+<p>In the next chapter we will see how the wave-particle duality can be observed and understood through the double slit experiment with electrons (and neutrons).</p>
+</section>
+</section>
+<section id="recap" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="recap"><span class="header-section-number">1.7</span> Recap</h2>
+<ul>
+<li><p>Black body spectrum first investigated by Wien (1894) via thermodynamic arguments</p></li>
+<li><p>Rayleigh–Jeans model in 1900 argued from equipartition and mode density <span class="math inline">\(\rightarrow\)</span> ever-increasing modes with same energy: ultraviolet catastrophe!</p></li>
+<li><p>Wien model worked at high frequencies, Rayleigh at low frequencies</p></li>
+<li><p>Planck (1900) interpolated between the two, fitting data at all wavelengths and deriving Stefan’s Law for total radiated power</p></li>
+<li><p>Post-hoc understanding of Planck model: discretisation of EM mode energies as integer multiples of <span class="math inline">\(\epsilon = h\nu\)</span>.</p></li>
+<li><p>Photoelectric effect and Bohr atomic spectra evidence quanta of light and quantized atomic energy levels</p></li>
+<li><p>Compton effect shows particle nature of light</p></li>
+<li><p>de Broglie: wave–particle duality (and wave mechanics). No real radiation/matter distinction</p></li>
+<li><p>Experimentally confirmed by electron (and more) diffraction</p></li>
+</ul>
+<hr>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bransden1989introduction" class="csl-entry" role="listitem">
+Bransden, Brian Harold, and Charles Jean Joachain. 1989. <span>“Introduction to Quantum Mechanics.”</span>
+</div>
+<div id="ref-haas1910" class="csl-entry" role="listitem">
+Haas, A. E. 1910. <span>“Über Die Elektrodynamische Bedeutung Des Planck’schen Strahlungsgesetzes Und Über Eine Neue Bestimmung Des Elektrischen Elementarquantums Und Der Dimension Des Wasserstoffatoms,”</span> Sitzungsberichte der kaiserlichen akademie der wissenschaften in wien. 2a, 119 pp. 119-144,.
+</div>
+<div id="ref-richtmyer1969introduction" class="csl-entry" role="listitem">
+Richtmyer, F. K., E. H. Kennard, and J. N. Cooper. 1969. <em>Introduction to Modern Physics</em>. International Series in Pure and Applied Physics. McGraw-Hill. <a href="https://books.google.co.uk/books?id=e9JGswEACAAJ">https://books.google.co.uk/books?id=e9JGswEACAAJ</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./p3qm-2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wavefunctions and the uncertainty principle</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
